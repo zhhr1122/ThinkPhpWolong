@@ -1,0 +1,42 @@
+[ 2016-07-25T11:47:34+08:00 ] 127.0.0.1 /index.php?m=admin$c=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000495s ]
+ERR: 无法加载模块:Admin$c=index
+
+[ 2016-07-25T13:16:58+08:00 ] 127.0.0.1 /index.php/c=admin&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000351s ]
+ERR: 无法加载模块:C=admin&a=index
+
+[ 2016-07-25T13:17:10+08:00 ] 127.0.0.1 /index.php?c=admin&m=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000548s ]
+ERR: 无法加载模块:Index
+
+[ 2016-07-25T19:50:27+08:00 ] 127.0.0.1 /index.php?m=menu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000369s ]
+ERR: 无法加载模块:Menu
+
+[ 2016-07-25T19:50:32+08:00 ] 127.0.0.1 /index.php?m=menu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000726s ]
+ERR: 无法加载模块:Menu
+
+[ 2016-07-25T19:50:37+08:00 ] 127.0.0.1 /index.php?m=meun
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000373s ]
+ERR: 无法加载模块:Meun
+
+[ 2016-07-25T20:13:13+08:00 ] 127.0.0.1 /admin.php?&c=login&m=ogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000524s ]
+ERR: 无法加载模块:Ogin
+

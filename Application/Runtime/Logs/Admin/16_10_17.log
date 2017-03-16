@@ -1,0 +1,32 @@
+[ 2016-10-17T15:53:46+08:00 ] 127.0.0.1 /admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000053s ]
+INFO: [ app_init ] --END-- [ RunTime:0.343427s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.030451s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.030613s ]
+NOTIC: [8] Undefined variable: module C:\wamp64\www\singcms\ThinkPHP\Common\functions.php 第 997 行.
+NOTIC: [8] Undefined variable: var C:\wamp64\www\singcms\ThinkPHP\Common\functions.php 第 1000 行.
+NOTIC: [2] array_reverse() expects parameter 1 to be array, null given C:\wamp64\www\singcms\ThinkPHP\Common\functions.php 第 1000 行.
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\wamp64\www\singcms\ThinkPHP\Common\functions.php 第 1000 行.
+
+[ 2016-10-17T15:53:46+08:00 ] 127.0.0.1 /admin.php?&c=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000323s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000368s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000467s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.022181s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.022363s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.188843s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.189059s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.050590s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.050703s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.014326s ]
+INFO: [ app_end ] --END-- [ RunTime:0.014445s ]
+

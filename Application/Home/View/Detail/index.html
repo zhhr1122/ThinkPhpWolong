@@ -1,0 +1,31 @@
+<?php
+ $config = D("Basic")->select();
+?>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{$config.title}</title>
+<meta name="keywords" content="{$config.keywords}" />
+<meta name="description" content="{$config.description}" />
+<link rel="stylesheet" href="/Public/css/bootstrap.min.css"
+	type="text/css" />
+<link rel="stylesheet" href="/Public/css/home/main.css" type="text/css" />
+</head>
+<body>
+	<include file="Index/header" />
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-9 col-md-9">
+					<div class="news-list">
+						<h1>{$news.title}</h1>
+						{$news.content}
+					</div>
+				</div>
+				<include file="Index/right" />
+			</div>
+		</div>
+	</section>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<?php
+ $config = D("Basic")->select();
+?>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{$config.title}</title>
+  <meta name="keywords" content="{$config.keywords}"/>
+  <meta name="description" content="{$config.description}"/>
+  <link rel="stylesheet" href="/Public/css/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="/Public/css/home/main.css" type="text/css" />
+</head>
+<body>
+<include file="Index/header" />
+<section>
+  <div class="container" style="">
+     <h1 style="color:red">{$message}</h1>
+     <h3 id="location">系统将在<span style="...">3</span>秒后自动跳转首页</h3>
+  </div>
+</section>
+</body>
+<script src="/Public/js/jquery.js"></script>
+<script>
+  //首页
+  var url="/";
+  var time = 3;
+  setInterval("refer()",1000);
+  function refer(){
+	  if(time == 0){
+		  location.href= url;
+	  }
+	  $("#location span").html(time);
+	  time--;
+  }
+</script>
+</html>

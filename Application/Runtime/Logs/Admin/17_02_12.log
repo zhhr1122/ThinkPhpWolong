@@ -1,0 +1,1372 @@
+[ 2017-02-12T14:48:43+08:00 ] 127.0.0.1 /admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000394s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000750s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000889s ]
+NOTIC: [8] Undefined variable: module C:\wamp64\www\singcms\ThinkPHP\Common\functions.php 第 997 行.
+NOTIC: [8] Undefined variable: var C:\wamp64\www\singcms\ThinkPHP\Common\functions.php 第 1000 行.
+NOTIC: [2] array_reverse() expects parameter 1 to be array, null given C:\wamp64\www\singcms\ThinkPHP\Common\functions.php 第 1000 行.
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\wamp64\www\singcms\ThinkPHP\Common\functions.php 第 1000 行.
+
+[ 2017-02-12T14:48:43+08:00 ] 127.0.0.1 /admin.php?&c=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000561s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000938s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001116s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000068s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000219s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021458s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021696s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000779s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000927s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000750s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000856s ]
+
+[ 2017-02-12T14:48:44+08:00 ] 127.0.0.1 /admin.php?&c=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000612s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001295s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001546s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000079s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000261s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008481s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008735s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000997s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001190s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001362s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001602s ]
+
+[ 2017-02-12T14:48:52+08:00 ] 127.0.0.1 /index.php?m=admin&c=login&a=check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000377s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000397s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000490s ]
+SQL: SHOW COLUMNS FROM `cms_admin` [ RunTime:0.0484s ]
+SQL: SELECT * FROM `cms_admin` WHERE ( username="admin" ) LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-02-12T14:48:55+08:00 ] 127.0.0.1 /index.php?m=admin&c=login&a=check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000078s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001034s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001265s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001506s ]
+SQL: SHOW COLUMNS FROM `cms_admin` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cms_admin` WHERE ( username="admin" ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: UPDATE `cms_admin` SET `username`='admin',`password`='d099d126030d3207ba102efa8e60630a',`lastloginip`='0',`lastlogintime`='1486882135',`email`='tracywxh0830@126.com',`realname`='singwa',`status`='1' WHERE ( admin_id=1 ) [ RunTime:0.0005s ]
+
+[ 2017-02-12T14:48:57+08:00 ] 127.0.0.1 /admin.php?c=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000525s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000432s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000574s ]
+SQL: SHOW COLUMNS FROM `cms_news` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `cms_news` WHERE `status` = 1 ORDER BY count desc LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cms_news` WHERE `status` <> -1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cms_position` [ RunTime:0.0432s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cms_position` WHERE `status` <> -1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `cms_admin` [ RunTime:0.0013s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cms_admin` WHERE `status` = 1 AND `lastlogintime` > 1486828800 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000083s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000194s ]
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0006s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.110569s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.110803s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000514s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000652s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000924s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001113s ]
+
+[ 2017-02-12T14:48:58+08:00 ] 127.0.0.1 /admin.php?c=menu&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000094s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000927s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000658s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000769s ]
+NOTIC: [2048] Declaration of Admin\Controller\MenuController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\MenuController.class.php 第 7 行.
+NOTIC: [8] Undefined index: p C:\wamp64\www\singcms\Application\Admin\Controller\MenuController.class.php 第 24 行.
+NOTIC: [8] Undefined index: pageSize C:\wamp64\www\singcms\Application\Admin\Controller\MenuController.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 ORDER BY listorder desc,menu_id desc LIMIT 0,10   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cms_menu` WHERE `status` <> -1 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000085s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000197s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: nav C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\b956215329b6f9aca22277599a4efdfc.php 第 102 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028405s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028553s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000613s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000714s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001060s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001279s ]
+
+[ 2017-02-12T14:48:59+08:00 ] 127.0.0.1 /admin.php?c=content&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000386s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000679s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000806s ]
+NOTIC: [2048] Declaration of Admin\Controller\ContentController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 10 行.
+NOTIC: [8] Undefined index: title C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 25 行.
+NOTIC: [8] Undefined index: catid C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 31 行.
+NOTIC: [8] Undefined index: position_id C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 36 行.
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 0 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: p C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 44 行.
+NOTIC: [8] Undefined index: pageSize C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 45 行.
+SQL: SHOW COLUMNS FROM `cms_news` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `cms_news` WHERE `status` <> -1 ORDER BY listorder desc,news_id desc LIMIT 0,5   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cms_position` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `cms_position` WHERE `status` <> -1 ORDER BY id desc  [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cms_news` WHERE `status` <> -1 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000135s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000295s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: catid C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 116 行.
+NOTIC: [8] Undefined variable: catid C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 116 行.
+NOTIC: [8] Undefined variable: catid C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 116 行.
+NOTIC: [8] Undefined variable: title C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 125 行.
+NOTIC: [8] Undefined variable: position_id C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 197 行.
+NOTIC: [8] Undefined variable: position_id C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 197 行.
+NOTIC: [8] Undefined variable: position_id C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 197 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032630s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032777s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000863s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001032s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001248s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001472s ]
+
+[ 2017-02-12T14:49:00+08:00 ] 127.0.0.1 /admin.php?c=position&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000403s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000684s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000839s ]
+NOTIC: [2048] Declaration of Admin\Controller\PositionController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\PositionController.class.php 第 7 行.
+NOTIC: [8] Undefined index: p C:\wamp64\www\singcms\Application\Admin\Controller\PositionController.class.php 第 12 行.
+NOTIC: [8] Undefined index: pageSize C:\wamp64\www\singcms\Application\Admin\Controller\PositionController.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `cms_position` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `cms_position` WHERE `status` <> -1 ORDER BY id desc LIMIT 0,10   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cms_position` WHERE `status` <> -1 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000133s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000316s ]
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0005s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029813s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029941s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001102s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001281s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001974s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002251s ]
+
+[ 2017-02-12T14:49:00+08:00 ] 127.0.0.1 /admin.php?c=positioncontent&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000459s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000868s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001038s ]
+NOTIC: [2048] Declaration of Admin\Controller\PositioncontentController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\PositioncontentController.class.php 第 7 行.
+NOTIC: [8] Undefined index: title C:\wamp64\www\singcms\Application\Admin\Controller\PositioncontentController.class.php 第 12 行.
+NOTIC: [8] Undefined index: position_id C:\wamp64\www\singcms\Application\Admin\Controller\PositioncontentController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `cms_position` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `cms_position` WHERE `status` <> -1 ORDER BY id desc  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: p C:\wamp64\www\singcms\Application\Admin\Controller\PositioncontentController.class.php 第 28 行.
+NOTIC: [8] Undefined index: pageSize C:\wamp64\www\singcms\Application\Admin\Controller\PositioncontentController.class.php 第 29 行.
+SQL: SHOW COLUMNS FROM `cms_position_content` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `cms_position_content` WHERE `status` <> -1 ORDER BY listorder desc,id desc LIMIT 0,5   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cms_position_content` WHERE `status` <> -1 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000131s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000290s ]
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: position_id C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\b8a8b9d170e6c07d7b463ea02385894d.php 第 114 行.
+NOTIC: [8] Undefined variable: position_id C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\b8a8b9d170e6c07d7b463ea02385894d.php 第 114 行.
+NOTIC: [8] Undefined variable: position_id C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\b8a8b9d170e6c07d7b463ea02385894d.php 第 114 行.
+NOTIC: [8] Undefined variable: title C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\b8a8b9d170e6c07d7b463ea02385894d.php 第 122 行.
+SQL: SELECT * FROM `cms_position` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `cms_position` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `cms_position` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `cms_position` WHERE ( id=5 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `cms_position` WHERE ( id=5 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035827s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036017s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000869s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001028s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001203s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001403s ]
+
+[ 2017-02-12T14:49:01+08:00 ] 127.0.0.1 /admin.php?c=admin&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000418s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000669s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000811s ]
+NOTIC: [2048] Declaration of Admin\Controller\AdminController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\AdminController.class.php 第 7 行.
+NOTIC: [8] Undefined index: p C:\wamp64\www\singcms\Application\Admin\Controller\AdminController.class.php 第 11 行.
+NOTIC: [8] Undefined index: pageSize C:\wamp64\www\singcms\Application\Admin\Controller\AdminController.class.php 第 12 行.
+SQL: SHOW COLUMNS FROM `cms_admin` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `cms_admin` WHERE `status` <> -1 ORDER BY admin_id desc LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cms_admin` WHERE `status` <> -1 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000120s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000302s ]
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: nav C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\b682812e058c4f7cab74d08ab9eabe11.php 第 102 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030381s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030521s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000703s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000833s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001219s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001409s ]
+
+[ 2017-02-12T14:49:01+08:00 ] 127.0.0.1 /admin.php?c=basic&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000692s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000805s ]
+NOTIC: [2048] Declaration of Common\Model\BasicModel::save() should be compatible with Think\Model::save($data = '', $options = Array) C:\wamp64\www\singcms\Application\Common\Model\BasicModel.class.php 第 5 行.
+NOTIC: [2048] Declaration of Common\Model\BasicModel::select() should be compatible with Think\Model::select($options = Array) C:\wamp64\www\singcms\Application\Common\Model\BasicModel.class.php 第 5 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000114s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000296s ]
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0003s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031312s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031427s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000656s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000759s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000763s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000866s ]
+
+[ 2017-02-12T14:49:05+08:00 ] 127.0.0.1 /admin.php?c=menu&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000571s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001024s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001223s ]
+NOTIC: [2048] Declaration of Admin\Controller\MenuController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\MenuController.class.php 第 7 行.
+NOTIC: [8] Undefined index: p C:\wamp64\www\singcms\Application\Admin\Controller\MenuController.class.php 第 24 行.
+NOTIC: [8] Undefined index: pageSize C:\wamp64\www\singcms\Application\Admin\Controller\MenuController.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 ORDER BY listorder desc,menu_id desc LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cms_menu` WHERE `status` <> -1 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000087s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000203s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0007s ]
+NOTIC: [8] Undefined variable: nav C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\b956215329b6f9aca22277599a4efdfc.php 第 102 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016606s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016751s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000606s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000706s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001258s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001446s ]
+
+[ 2017-02-12T14:49:08+08:00 ] 127.0.0.1 /admin.php?c=content&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000409s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001114s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001251s ]
+NOTIC: [2048] Declaration of Admin\Controller\ContentController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 10 行.
+NOTIC: [8] Undefined index: title C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 25 行.
+NOTIC: [8] Undefined index: catid C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 31 行.
+NOTIC: [8] Undefined index: position_id C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 36 行.
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 0 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: p C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 44 行.
+NOTIC: [8] Undefined index: pageSize C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 45 行.
+SQL: SHOW COLUMNS FROM `cms_news` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `cms_news` WHERE `status` <> -1 ORDER BY listorder desc,news_id desc LIMIT 0,5   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cms_position` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `cms_position` WHERE `status` <> -1 ORDER BY id desc  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cms_news` WHERE `status` <> -1 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000137s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000283s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: catid C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 116 行.
+NOTIC: [8] Undefined variable: catid C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 116 行.
+NOTIC: [8] Undefined variable: catid C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 116 行.
+NOTIC: [8] Undefined variable: title C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 125 行.
+NOTIC: [8] Undefined variable: position_id C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 197 行.
+NOTIC: [8] Undefined variable: position_id C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 197 行.
+NOTIC: [8] Undefined variable: position_id C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 197 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024160s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024278s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001045s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001174s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001275s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001594s ]
+
+[ 2017-02-12T14:49:10+08:00 ] 127.0.0.1 /admin.php?c=content&a=add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000453s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001024s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001206s ]
+NOTIC: [2048] Declaration of Admin\Controller\ContentController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 0 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000143s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000319s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0005s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028167s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028273s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000618s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000717s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000950s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001125s ]
+
+[ 2017-02-12T14:53:11+08:00 ] 127.0.0.1 /admin.php?c=menu&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000600s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000584s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000735s ]
+NOTIC: [2048] Declaration of Admin\Controller\MenuController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\MenuController.class.php 第 7 行.
+NOTIC: [8] Undefined index: p C:\wamp64\www\singcms\Application\Admin\Controller\MenuController.class.php 第 24 行.
+NOTIC: [8] Undefined index: pageSize C:\wamp64\www\singcms\Application\Admin\Controller\MenuController.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 ORDER BY listorder desc,menu_id desc LIMIT 0,10   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cms_menu` WHERE `status` <> -1 LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000120s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000266s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: nav C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\b956215329b6f9aca22277599a4efdfc.php 第 102 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018840s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019044s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000928s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001172s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001799s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002056s ]
+
+[ 2017-02-12T14:53:22+08:00 ] 127.0.0.1 /admin.php?c=menu&a=add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000444s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000584s ]
+NOTIC: [2048] Declaration of Admin\Controller\MenuController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\MenuController.class.php 第 7 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000165s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000370s ]
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: menus C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\31553d7bb41170a30982ff9dddd5d67e.php 第 124 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.067331s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.067567s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000518s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000616s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000914s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001097s ]
+
+[ 2017-02-12T14:53:56+08:00 ] 127.0.0.1 /admin.php?c=menu&a=add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000447s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000466s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000590s ]
+NOTIC: [2048] Declaration of Admin\Controller\MenuController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\MenuController.class.php 第 7 行.
+
+[ 2017-02-12T14:54:04+08:00 ] 127.0.0.1 /admin.php?c=menu&a=add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000408s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001299s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001549s ]
+NOTIC: [2048] Declaration of Admin\Controller\MenuController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\MenuController.class.php 第 7 行.
+NOTIC: [8] Undefined index: menu_id C:\wamp64\www\singcms\Application\Admin\Controller\MenuController.class.php 第 51 行.
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0011s ]
+SQL: INSERT INTO `cms_menu` (`name`,`type`,`m`,`c`,`f`,`status`) VALUES ('公告','0','gonggao','index','add','1') [ RunTime:0.0006s ]
+
+[ 2017-02-12T14:54:06+08:00 ] 127.0.0.1 /admin.php?c=menu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000337s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000429s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000535s ]
+NOTIC: [2048] Declaration of Admin\Controller\MenuController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\MenuController.class.php 第 7 行.
+NOTIC: [8] Undefined index: p C:\wamp64\www\singcms\Application\Admin\Controller\MenuController.class.php 第 24 行.
+NOTIC: [8] Undefined index: pageSize C:\wamp64\www\singcms\Application\Admin\Controller\MenuController.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 ORDER BY listorder desc,menu_id desc LIMIT 0,10   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cms_menu` WHERE `status` <> -1 LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000216s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000578s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0007s ]
+NOTIC: [8] Undefined variable: nav C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\b956215329b6f9aca22277599a4efdfc.php 第 102 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016219s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016382s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000723s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000884s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001256s ]
+
+[ 2017-02-12T14:54:23+08:00 ] 127.0.0.1 /admin.php?c=menu&a=edit&id=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000384s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000658s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000773s ]
+NOTIC: [2048] Declaration of Admin\Controller\MenuController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\MenuController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `cms_menu` WHERE ( menu_id=3 ) LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000125s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000299s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0007s ]
+NOTIC: [8] Undefined variable: menus C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\a77aa83c121d51b6cd699ea2b65451f6.php 第 124 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.067879s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.067986s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000559s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000655s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001053s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001207s ]
+
+[ 2017-02-12T14:54:35+08:00 ] 127.0.0.1 /admin.php?c=menu&a=add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000391s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000769s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000904s ]
+NOTIC: [2048] Declaration of Admin\Controller\MenuController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\MenuController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0007s ]
+SQL: UPDATE `cms_menu` SET `name`='简介',`type`='0',`m`='home',`c`='cat',`f`='index',`status`='1' WHERE ( menu_id=3 ) [ RunTime:0.0007s ]
+
+[ 2017-02-12T14:54:36+08:00 ] 127.0.0.1 /admin.php?c=menu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000390s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000660s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000769s ]
+NOTIC: [2048] Declaration of Admin\Controller\MenuController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\MenuController.class.php 第 7 行.
+NOTIC: [8] Undefined index: p C:\wamp64\www\singcms\Application\Admin\Controller\MenuController.class.php 第 24 行.
+NOTIC: [8] Undefined index: pageSize C:\wamp64\www\singcms\Application\Admin\Controller\MenuController.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 ORDER BY listorder desc,menu_id desc LIMIT 0,10   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cms_menu` WHERE `status` <> -1 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000087s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000200s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0006s ]
+NOTIC: [8] Undefined variable: nav C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\b956215329b6f9aca22277599a4efdfc.php 第 102 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016282s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016600s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001781s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002030s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001254s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001553s ]
+
+[ 2017-02-12T14:54:50+08:00 ] 127.0.0.1 /admin.php?c=menu&a=edit&id=8
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000633s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001034s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001230s ]
+NOTIC: [2048] Declaration of Admin\Controller\MenuController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\MenuController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `cms_menu` WHERE ( menu_id=8 ) LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000086s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000198s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0008s ]
+NOTIC: [8] Undefined variable: menus C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\a77aa83c121d51b6cd699ea2b65451f6.php 第 124 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017595s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017784s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000895s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001067s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001329s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001518s ]
+
+[ 2017-02-12T14:54:56+08:00 ] 127.0.0.1 /admin.php?c=menu&a=add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000622s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001145s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001350s ]
+NOTIC: [2048] Declaration of Admin\Controller\MenuController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\MenuController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0007s ]
+SQL: UPDATE `cms_menu` SET `name`='幼儿风采',`type`='0',`m`='home',`c`='cat',`f`='index',`status`='1' WHERE ( menu_id=8 ) [ RunTime:0.0005s ]
+
+[ 2017-02-12T14:54:57+08:00 ] 127.0.0.1 /admin.php?c=menu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000590s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000823s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000944s ]
+NOTIC: [2048] Declaration of Admin\Controller\MenuController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\MenuController.class.php 第 7 行.
+NOTIC: [8] Undefined index: p C:\wamp64\www\singcms\Application\Admin\Controller\MenuController.class.php 第 24 行.
+NOTIC: [8] Undefined index: pageSize C:\wamp64\www\singcms\Application\Admin\Controller\MenuController.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 ORDER BY listorder desc,menu_id desc LIMIT 0,10   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cms_menu` WHERE `status` <> -1 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000088s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000202s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: nav C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\b956215329b6f9aca22277599a4efdfc.php 第 102 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015329s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015507s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000551s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000663s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001061s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001246s ]
+
+[ 2017-02-12T14:55:50+08:00 ] 127.0.0.1 /admin.php?c=content&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000410s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000644s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000815s ]
+NOTIC: [2048] Declaration of Admin\Controller\ContentController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 10 行.
+NOTIC: [8] Undefined index: title C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 25 行.
+NOTIC: [8] Undefined index: catid C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 31 行.
+NOTIC: [8] Undefined index: position_id C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 36 行.
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 0 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: p C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 44 行.
+NOTIC: [8] Undefined index: pageSize C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 45 行.
+SQL: SHOW COLUMNS FROM `cms_news` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `cms_news` WHERE `status` <> -1 ORDER BY listorder desc,news_id desc LIMIT 0,5   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cms_position` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `cms_position` WHERE `status` <> -1 ORDER BY id desc  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cms_news` WHERE `status` <> -1 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000095s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000205s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: catid C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 116 行.
+NOTIC: [8] Undefined variable: catid C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 116 行.
+NOTIC: [8] Undefined variable: catid C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 116 行.
+NOTIC: [8] Undefined variable: catid C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 116 行.
+NOTIC: [8] Undefined variable: title C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 125 行.
+NOTIC: [8] Undefined variable: position_id C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 197 行.
+NOTIC: [8] Undefined variable: position_id C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 197 行.
+NOTIC: [8] Undefined variable: position_id C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 197 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018913s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019060s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000684s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000812s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001162s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001337s ]
+
+[ 2017-02-12T14:55:51+08:00 ] 127.0.0.1 /admin.php?c=content&a=add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000143s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001400s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000842s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001006s ]
+NOTIC: [2048] Declaration of Admin\Controller\ContentController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 0 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000110s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000250s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0007s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014480s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014618s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000787s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000947s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001021s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001208s ]
+
+[ 2017-02-12T14:56:34+08:00 ] 127.0.0.1 /admin.php?c=image&a=ajaxuploadimage
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000711s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000800s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000960s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' C:\wamp64\www\singcms\Application\Common\Model\UploadImageModel.class.php 第 19 行.
+NOTIC: [8] Use of undefined constant m - assumed 'm' C:\wamp64\www\singcms\Application\Common\Model\UploadImageModel.class.php 第 19 行.
+NOTIC: [8] Use of undefined constant d - assumed 'd' C:\wamp64\www\singcms\Application\Common\Model\UploadImageModel.class.php 第 19 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given C:\wamp64\www\singcms\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+
+[ 2017-02-12T14:56:55+08:00 ] 127.0.0.1 /admin.php?c=content&a=add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000412s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000950s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001117s ]
+NOTIC: [2048] Declaration of Admin\Controller\ContentController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 10 行.
+
+[ 2017-02-12T14:57:00+08:00 ] 127.0.0.1 /admin.php?c=content&a=add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000485s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000853s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001019s ]
+NOTIC: [2048] Declaration of Admin\Controller\ContentController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 10 行.
+NOTIC: [8] Undefined index: news_id C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 77 行.
+SQL: SHOW COLUMNS FROM `cms_news` [ RunTime:0.0011s ]
+SQL: INSERT INTO `cms_news` (`title`,`small_title`,`thumb`,`title_font_color`,`catid`,`copyfrom`,`description`,`keywords`,`create_time`,`username`) VALUES ('新建县米罗幼儿园简介','新建县米','/upload/2017/02/12/58a007228b978.jpg','','3','0','啊啊',' 啊啊','1486882620','admin') [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `cms_news_content` [ RunTime:0.0012s ]
+SQL: INSERT INTO `cms_news_content` (`content`,`news_id`,`create_time`) VALUES ('本幼兒園非常牛逼！歡迎大家就讀','26','1486882620') [ RunTime:0.0422s ]
+
+[ 2017-02-12T14:57:01+08:00 ] 127.0.0.1 /admin.php?c=content
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000590s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000808s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000928s ]
+NOTIC: [2048] Declaration of Admin\Controller\ContentController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 10 行.
+NOTIC: [8] Undefined index: title C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 25 行.
+NOTIC: [8] Undefined index: catid C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 31 行.
+NOTIC: [8] Undefined index: position_id C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 36 行.
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 0 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: p C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 44 行.
+NOTIC: [8] Undefined index: pageSize C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 45 行.
+SQL: SHOW COLUMNS FROM `cms_news` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `cms_news` WHERE `status` <> -1 ORDER BY listorder desc,news_id desc LIMIT 0,5   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `cms_position` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `cms_position` WHERE `status` <> -1 ORDER BY id desc  [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cms_news` WHERE `status` <> -1 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000145s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000327s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: catid C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 116 行.
+NOTIC: [8] Undefined variable: catid C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 116 行.
+NOTIC: [8] Undefined variable: catid C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 116 行.
+NOTIC: [8] Undefined variable: catid C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 116 行.
+NOTIC: [8] Undefined variable: title C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 125 行.
+NOTIC: [8] Undefined variable: position_id C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 197 行.
+NOTIC: [8] Undefined variable: position_id C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 197 行.
+NOTIC: [8] Undefined variable: position_id C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 197 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020116s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020277s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000908s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001076s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001069s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001315s ]
+
+[ 2017-02-12T14:57:10+08:00 ] 127.0.0.1 /admin.php?catid=3&c=content&a=index&title=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000686s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001062s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001278s ]
+NOTIC: [2048] Declaration of Admin\Controller\ContentController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 10 行.
+NOTIC: [8] Undefined index: position_id C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 36 行.
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 0 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: p C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 44 行.
+NOTIC: [8] Undefined index: pageSize C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 45 行.
+SQL: SHOW COLUMNS FROM `cms_news` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `cms_news` WHERE `catid` = 3 AND `status` <> -1 ORDER BY listorder desc,news_id desc LIMIT 0,5   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `cms_position` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `cms_position` WHERE `status` <> -1 ORDER BY id desc  [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cms_news` WHERE `catid` = 3 AND `status` <> -1 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000099s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000212s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0008s ]
+NOTIC: [8] Undefined variable: title C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 125 行.
+NOTIC: [8] Undefined variable: position_id C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 197 行.
+NOTIC: [8] Undefined variable: position_id C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 197 行.
+NOTIC: [8] Undefined variable: position_id C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 197 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022009s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022125s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000638s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000764s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001111s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001307s ]
+
+[ 2017-02-12T14:57:26+08:00 ] 127.0.0.1 /admin.php?c=content&a=listorder
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000385s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000636s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000729s ]
+NOTIC: [2048] Declaration of Admin\Controller\ContentController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `cms_news` [ RunTime:0.0006s ]
+SQL: UPDATE `cms_news` SET `listorder`='10' WHERE ( news_id=23 ) [ RunTime:0.0004s ]
+SQL: UPDATE `cms_news` SET `listorder`='2' WHERE ( news_id=21 ) [ RunTime:0.0003s ]
+SQL: UPDATE `cms_news` SET `listorder`='1' WHERE ( news_id=24 ) [ RunTime:0.0004s ]
+SQL: UPDATE `cms_news` SET `listorder`='30' WHERE ( news_id=26 ) [ RunTime:0.0003s ]
+SQL: UPDATE `cms_news` SET `listorder`='0' WHERE ( news_id=25 ) [ RunTime:0.0002s ]
+
+[ 2017-02-12T14:57:27+08:00 ] 127.0.0.1 /admin.php?c=content
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000430s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000635s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000745s ]
+NOTIC: [2048] Declaration of Admin\Controller\ContentController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 10 行.
+NOTIC: [8] Undefined index: title C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 25 行.
+NOTIC: [8] Undefined index: catid C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 31 行.
+NOTIC: [8] Undefined index: position_id C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 36 行.
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 0 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: p C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 44 行.
+NOTIC: [8] Undefined index: pageSize C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 45 行.
+SQL: SHOW COLUMNS FROM `cms_news` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `cms_news` WHERE `status` <> -1 ORDER BY listorder desc,news_id desc LIMIT 0,5   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `cms_position` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `cms_position` WHERE `status` <> -1 ORDER BY id desc  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cms_news` WHERE `status` <> -1 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000093s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000205s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0006s ]
+NOTIC: [8] Undefined variable: catid C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 116 行.
+NOTIC: [8] Undefined variable: catid C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 116 行.
+NOTIC: [8] Undefined variable: catid C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 116 行.
+NOTIC: [8] Undefined variable: catid C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 116 行.
+NOTIC: [8] Undefined variable: title C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 125 行.
+NOTIC: [8] Undefined variable: position_id C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 197 行.
+NOTIC: [8] Undefined variable: position_id C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 197 行.
+NOTIC: [8] Undefined variable: position_id C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 197 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019365s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019480s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000611s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000731s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001028s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001177s ]
+
+[ 2017-02-12T14:57:59+08:00 ] 127.0.0.1 /admin.php?c=content&a=edit&id=26
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000401s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000701s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000819s ]
+NOTIC: [2048] Declaration of Admin\Controller\ContentController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `cms_news` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `cms_news` WHERE ( news_id=26 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `cms_news_content` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `cms_news_content` WHERE ( news_id=26 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 0 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000098s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000219s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0004s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.040196s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.040316s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000580s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000677s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000963s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001102s ]
+
+[ 2017-02-12T14:58:14+08:00 ] 127.0.0.1 /admin.php?c=image&a=kindupload&dir=image
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000054s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000936s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000720s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000855s ]
+NOTIC: [8] Use of undefined constant Y - assumed 'Y' C:\wamp64\www\singcms\Application\Common\Model\UploadImageModel.class.php 第 19 行.
+NOTIC: [8] Use of undefined constant m - assumed 'm' C:\wamp64\www\singcms\Application\Common\Model\UploadImageModel.class.php 第 19 行.
+NOTIC: [8] Use of undefined constant d - assumed 'd' C:\wamp64\www\singcms\Application\Common\Model\UploadImageModel.class.php 第 19 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given C:\wamp64\www\singcms\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+
+[ 2017-02-12T14:58:16+08:00 ] 127.0.0.1 /admin.php?c=content&a=add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000388s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000681s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000775s ]
+NOTIC: [2048] Declaration of Admin\Controller\ContentController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `cms_news` [ RunTime:0.0011s ]
+SQL: UPDATE `cms_news` SET `title`='新建县米罗幼儿园简介',`small_title`='新建县米',`thumb`='/upload/2017/02/12/58a007228b978.jpg',`title_font_color`='',`catid`='3',`copyfrom`='0',`description`='啊啊',`keywords`=' 啊啊',`update_time`='1486882696' WHERE ( news_id=26 ) [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cms_news_content` [ RunTime:0.0015s ]
+SQL: UPDATE `cms_news_content` SET `content`='&lt;p&gt;
+	本幼兒園非常牛逼！歡迎大家就讀
+&lt;/p&gt;
+&lt;p&gt;
+	&lt;br /&gt;
+&lt;/p&gt;
+&lt;p&gt;
+	&lt;img src=&quot;/upload/2017/02/12/58a00786919ba.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;/p&gt;',`update_time`='1486882696' WHERE ( news_id=26 ) [ RunTime:0.0006s ]
+
+[ 2017-02-12T14:58:18+08:00 ] 127.0.0.1 /admin.php?c=content
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000385s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001580s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001897s ]
+NOTIC: [2048] Declaration of Admin\Controller\ContentController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 10 行.
+NOTIC: [8] Undefined index: title C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 25 行.
+NOTIC: [8] Undefined index: catid C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 31 行.
+NOTIC: [8] Undefined index: position_id C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 36 行.
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 0 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0014s ]
+NOTIC: [8] Undefined index: p C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 44 行.
+NOTIC: [8] Undefined index: pageSize C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 45 行.
+SQL: SHOW COLUMNS FROM `cms_news` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `cms_news` WHERE `status` <> -1 ORDER BY listorder desc,news_id desc LIMIT 0,5   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `cms_position` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `cms_position` WHERE `status` <> -1 ORDER BY id desc  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cms_news` WHERE `status` <> -1 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000133s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000265s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0007s ]
+NOTIC: [8] Undefined variable: catid C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 116 行.
+NOTIC: [8] Undefined variable: catid C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 116 行.
+NOTIC: [8] Undefined variable: catid C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 116 行.
+NOTIC: [8] Undefined variable: catid C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 116 行.
+NOTIC: [8] Undefined variable: title C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 125 行.
+NOTIC: [8] Undefined variable: position_id C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 197 行.
+NOTIC: [8] Undefined variable: position_id C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 197 行.
+NOTIC: [8] Undefined variable: position_id C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 197 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019145s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019275s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000594s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000694s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001016s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001169s ]
+
+[ 2017-02-12T23:12:19+08:00 ] 127.0.0.1 /admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000442s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001578s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001940s ]
+NOTIC: [8] Undefined variable: module C:\wamp64\www\singcms\ThinkPHP\Common\functions.php 第 997 行.
+NOTIC: [8] Undefined variable: var C:\wamp64\www\singcms\ThinkPHP\Common\functions.php 第 1000 行.
+NOTIC: [2] array_reverse() expects parameter 1 to be array, null given C:\wamp64\www\singcms\ThinkPHP\Common\functions.php 第 1000 行.
+NOTIC: [2] http_build_query(): Parameter 1 expected to be Array or Object.  Incorrect value given C:\wamp64\www\singcms\ThinkPHP\Common\functions.php 第 1000 行.
+
+[ 2017-02-12T23:12:19+08:00 ] 127.0.0.1 /admin.php?&c=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000344s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000429s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000540s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000108s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000231s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005082s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005223s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000413s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000513s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000724s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000866s ]
+
+[ 2017-02-12T23:12:19+08:00 ] 127.0.0.1 /admin.php?&c=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000597s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000958s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001192s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000061s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000172s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005894s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006044s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000349s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000449s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000482s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000584s ]
+
+[ 2017-02-12T23:12:26+08:00 ] 127.0.0.1 /index.php?m=admin&c=login&a=check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001188s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001105s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001322s ]
+SQL: SHOW COLUMNS FROM `cms_admin` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `cms_admin` WHERE ( username="admin" ) LIMIT 1   [ RunTime:0.0009s ]
+
+[ 2017-02-12T23:12:30+08:00 ] 127.0.0.1 /index.php?m=admin&c=login&a=check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000553s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000712s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000902s ]
+SQL: SHOW COLUMNS FROM `cms_admin` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `cms_admin` WHERE ( username="admin" ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `cms_admin` SET `username`='admin',`password`='d099d126030d3207ba102efa8e60630a',`lastloginip`='0',`lastlogintime`='1486912350',`email`='tracywxh0830@126.com',`realname`='singwa',`status`='1' WHERE ( admin_id=1 ) [ RunTime:0.0010s ]
+
+[ 2017-02-12T23:12:31+08:00 ] 127.0.0.1 /admin.php?c=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000362s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000390s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000496s ]
+SQL: SHOW COLUMNS FROM `cms_news` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cms_news` WHERE `status` = 1 ORDER BY count desc LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cms_news` WHERE `status` <> -1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `cms_position` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cms_position` WHERE `status` <> -1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cms_admin` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cms_admin` WHERE `status` = 1 AND `lastlogintime` > 1486828800 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000100s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000240s ]
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0004s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016549s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016687s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000533s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000634s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000870s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001063s ]
+
+[ 2017-02-12T23:12:33+08:00 ] 127.0.0.1 /admin.php?c=admin&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000401s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000552s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000729s ]
+NOTIC: [2048] Declaration of Admin\Controller\AdminController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\AdminController.class.php 第 7 行.
+NOTIC: [8] Undefined index: p C:\wamp64\www\singcms\Application\Admin\Controller\AdminController.class.php 第 11 行.
+NOTIC: [8] Undefined index: pageSize C:\wamp64\www\singcms\Application\Admin\Controller\AdminController.class.php 第 12 行.
+SQL: SHOW COLUMNS FROM `cms_admin` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `cms_admin` WHERE `status` <> -1 ORDER BY admin_id desc LIMIT 0,10   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cms_admin` WHERE `status` <> -1 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000077s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000185s ]
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: nav C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\b682812e058c4f7cab74d08ab9eabe11.php 第 102 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014831s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014952s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000464s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000560s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000529s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000628s ]
+
+[ 2017-02-12T23:12:57+08:00 ] 127.0.0.1 /admin.php?c=content&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000401s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000478s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000639s ]
+NOTIC: [2048] Declaration of Admin\Controller\ContentController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 10 行.
+NOTIC: [8] Undefined index: title C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 25 行.
+NOTIC: [8] Undefined index: catid C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 31 行.
+NOTIC: [8] Undefined index: position_id C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 36 行.
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 0 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: p C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 44 行.
+NOTIC: [8] Undefined index: pageSize C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 45 行.
+SQL: SHOW COLUMNS FROM `cms_news` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `cms_news` WHERE `status` <> -1 ORDER BY listorder desc,news_id desc LIMIT 0,5   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `cms_position` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `cms_position` WHERE `status` <> -1 ORDER BY id desc  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cms_news` WHERE `status` <> -1 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000095s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000205s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: catid C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 116 行.
+NOTIC: [8] Undefined variable: catid C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 116 行.
+NOTIC: [8] Undefined variable: catid C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 116 行.
+NOTIC: [8] Undefined variable: catid C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 116 行.
+NOTIC: [8] Undefined variable: title C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 125 行.
+NOTIC: [8] Undefined variable: position_id C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 197 行.
+NOTIC: [8] Undefined variable: position_id C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 197 行.
+NOTIC: [8] Undefined variable: position_id C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 197 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016107s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016243s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000483s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000581s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000817s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000975s ]
+
+[ 2017-02-12T23:13:13+08:00 ] 127.0.0.1 /admin.php?c=basic&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000339s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000389s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000496s ]
+NOTIC: [2048] Declaration of Common\Model\BasicModel::save() should be compatible with Think\Model::save($data = '', $options = Array) C:\wamp64\www\singcms\Application\Common\Model\BasicModel.class.php 第 5 行.
+NOTIC: [2048] Declaration of Common\Model\BasicModel::select() should be compatible with Think\Model::select($options = Array) C:\wamp64\www\singcms\Application\Common\Model\BasicModel.class.php 第 5 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000183s ]
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0004s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017240s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017390s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000808s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000944s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000704s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000812s ]
+
+[ 2017-02-12T23:13:14+08:00 ] 127.0.0.1 /admin.php?c=admin&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000405s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000406s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000523s ]
+NOTIC: [2048] Declaration of Admin\Controller\AdminController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\AdminController.class.php 第 7 行.
+NOTIC: [8] Undefined index: p C:\wamp64\www\singcms\Application\Admin\Controller\AdminController.class.php 第 11 行.
+NOTIC: [8] Undefined index: pageSize C:\wamp64\www\singcms\Application\Admin\Controller\AdminController.class.php 第 12 行.
+SQL: SHOW COLUMNS FROM `cms_admin` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `cms_admin` WHERE `status` <> -1 ORDER BY admin_id desc LIMIT 0,10   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cms_admin` WHERE `status` <> -1 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000190s ]
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: nav C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\b682812e058c4f7cab74d08ab9eabe11.php 第 102 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016747s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016934s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001007s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001238s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001236s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001441s ]
+
+[ 2017-02-12T23:13:21+08:00 ] 127.0.0.1 /admin.php?c=menu&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000353s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000394s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000512s ]
+NOTIC: [2048] Declaration of Admin\Controller\MenuController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\MenuController.class.php 第 7 行.
+NOTIC: [8] Undefined index: p C:\wamp64\www\singcms\Application\Admin\Controller\MenuController.class.php 第 24 行.
+NOTIC: [8] Undefined index: pageSize C:\wamp64\www\singcms\Application\Admin\Controller\MenuController.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 ORDER BY listorder desc,menu_id desc LIMIT 0,10   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cms_menu` WHERE `status` <> -1 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000140s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000329s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: nav C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\b956215329b6f9aca22277599a4efdfc.php 第 102 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018142s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018254s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000511s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000611s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000878s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001086s ]
+
+[ 2017-02-12T23:13:24+08:00 ] 127.0.0.1 /admin.php?c=content&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000407s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000458s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000594s ]
+NOTIC: [2048] Declaration of Admin\Controller\ContentController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 10 行.
+NOTIC: [8] Undefined index: title C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 25 行.
+NOTIC: [8] Undefined index: catid C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 31 行.
+NOTIC: [8] Undefined index: position_id C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 36 行.
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 0 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: p C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 44 行.
+NOTIC: [8] Undefined index: pageSize C:\wamp64\www\singcms\Application\Admin\Controller\ContentController.class.php 第 45 行.
+SQL: SHOW COLUMNS FROM `cms_news` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `cms_news` WHERE `status` <> -1 ORDER BY listorder desc,news_id desc LIMIT 0,5   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cms_position` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `cms_position` WHERE `status` <> -1 ORDER BY id desc  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cms_news` WHERE `status` <> -1 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000222s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000436s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0007s ]
+NOTIC: [8] Undefined variable: catid C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 116 行.
+NOTIC: [8] Undefined variable: catid C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 116 行.
+NOTIC: [8] Undefined variable: catid C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 116 行.
+NOTIC: [8] Undefined variable: catid C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 116 行.
+NOTIC: [8] Undefined variable: title C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 125 行.
+NOTIC: [8] Undefined variable: position_id C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 197 行.
+NOTIC: [8] Undefined variable: position_id C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 197 行.
+NOTIC: [8] Undefined variable: position_id C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\ccc9ced3ad798311a07cb47b740981c5.php 第 197 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025045s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025174s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000649s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000778s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001120s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001351s ]
+
+[ 2017-02-12T23:13:36+08:00 ] 127.0.0.1 /admin.php?c=basic&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000572s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000633s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000895s ]
+NOTIC: [2048] Declaration of Common\Model\BasicModel::save() should be compatible with Think\Model::save($data = '', $options = Array) C:\wamp64\www\singcms\Application\Common\Model\BasicModel.class.php 第 5 行.
+NOTIC: [2048] Declaration of Common\Model\BasicModel::select() should be compatible with Think\Model::select($options = Array) C:\wamp64\www\singcms\Application\Common\Model\BasicModel.class.php 第 5 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000110s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000291s ]
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0005s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020090s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020280s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001010s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001221s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001127s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001360s ]
+
+[ 2017-02-12T23:13:37+08:00 ] 127.0.0.1 /admin.php?c=admin&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000511s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000469s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000616s ]
+NOTIC: [2048] Declaration of Admin\Controller\AdminController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\AdminController.class.php 第 7 行.
+NOTIC: [8] Undefined index: p C:\wamp64\www\singcms\Application\Admin\Controller\AdminController.class.php 第 11 行.
+NOTIC: [8] Undefined index: pageSize C:\wamp64\www\singcms\Application\Admin\Controller\AdminController.class.php 第 12 行.
+SQL: SHOW COLUMNS FROM `cms_admin` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `cms_admin` WHERE `status` <> -1 ORDER BY admin_id desc LIMIT 0,10   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cms_admin` WHERE `status` <> -1 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000092s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000226s ]
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: nav C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\b682812e058c4f7cab74d08ab9eabe11.php 第 102 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016188s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016312s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000472s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000569s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000567s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000701s ]
+
+[ 2017-02-12T23:13:38+08:00 ] 127.0.0.1 /admin.php?c=positioncontent&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000339s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000390s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000496s ]
+NOTIC: [2048] Declaration of Admin\Controller\PositioncontentController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\PositioncontentController.class.php 第 7 行.
+NOTIC: [8] Undefined index: title C:\wamp64\www\singcms\Application\Admin\Controller\PositioncontentController.class.php 第 12 行.
+NOTIC: [8] Undefined index: position_id C:\wamp64\www\singcms\Application\Admin\Controller\PositioncontentController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `cms_position` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `cms_position` WHERE `status` <> -1 ORDER BY id desc  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: p C:\wamp64\www\singcms\Application\Admin\Controller\PositioncontentController.class.php 第 28 行.
+NOTIC: [8] Undefined index: pageSize C:\wamp64\www\singcms\Application\Admin\Controller\PositioncontentController.class.php 第 29 行.
+SQL: SHOW COLUMNS FROM `cms_position_content` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `cms_position_content` WHERE `status` <> -1 ORDER BY listorder desc,id desc LIMIT 0,5   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cms_position_content` WHERE `status` <> -1 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000088s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000194s ]
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: position_id C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\b8a8b9d170e6c07d7b463ea02385894d.php 第 114 行.
+NOTIC: [8] Undefined variable: position_id C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\b8a8b9d170e6c07d7b463ea02385894d.php 第 114 行.
+NOTIC: [8] Undefined variable: position_id C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\b8a8b9d170e6c07d7b463ea02385894d.php 第 114 行.
+NOTIC: [8] Undefined variable: title C:\wamp64\www\singcms\Application\Runtime\Cache\Admin\b8a8b9d170e6c07d7b463ea02385894d.php 第 122 行.
+SQL: SELECT * FROM `cms_position` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `cms_position` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `cms_position` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `cms_position` WHERE ( id=5 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `cms_position` WHERE ( id=5 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020316s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020472s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000488s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000598s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000751s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000898s ]
+
+[ 2017-02-12T23:13:38+08:00 ] 127.0.0.1 /admin.php?c=position&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000366s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000390s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000495s ]
+NOTIC: [2048] Declaration of Admin\Controller\PositionController::setStatus() should be compatible with Admin\Controller\CommonController::setStatus($data, $models) C:\wamp64\www\singcms\Application\Admin\Controller\PositionController.class.php 第 7 行.
+NOTIC: [8] Undefined index: p C:\wamp64\www\singcms\Application\Admin\Controller\PositionController.class.php 第 12 行.
+NOTIC: [8] Undefined index: pageSize C:\wamp64\www\singcms\Application\Admin\Controller\PositionController.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `cms_position` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `cms_position` WHERE `status` <> -1 ORDER BY id desc LIMIT 0,10   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cms_position` WHERE `status` <> -1 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000148s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000353s ]
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 1 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0003s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018529s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018637s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000467s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000566s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000924s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001107s ]
+

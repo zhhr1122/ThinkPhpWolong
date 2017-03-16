@@ -1,0 +1,348 @@
+[ 2016-08-13T00:25:37+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000734s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001283s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001539s ]
+SQL: SHOW COLUMNS FROM `cms_position_content` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `cms_position_content` WHERE `status` <> -1 AND `position_id` = 2 LIMIT 0,1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `cms_position_content` WHERE `status` <> -1 AND `position_id` = 3 LIMIT 0,3   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cms_news` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `cms_news` WHERE `status` <> -1 AND `thumb` <> '' ORDER BY listorder desc,news_id desc LIMIT 0,30   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cms_position_content` WHERE `status` <> -1 AND `position_id` = 5 LIMIT 0,2   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `cms_news` WHERE `status` <> -1 ORDER BY count desc,news_id desc LIMIT 0,10   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000124s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000308s ]
+NOTIC: [2048] Declaration of Common\Model\BasicModel::save() should be compatible with Think\Model::save($data = '', $options = Array) D:\wamp64\www\singcms\Application\Common\Model\BasicModel.class.php 第 19 行.
+NOTIC: [2048] Declaration of Common\Model\BasicModel::select() should be compatible with Think\Model::select($options = Array) D:\wamp64\www\singcms\Application\Common\Model\BasicModel.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 0 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 29 行.
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 30 行.
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 30 行.
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 30 行.
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 30 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024319s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024499s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000777s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000966s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001002s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001196s ]
+
+[ 2016-08-13T00:27:57+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000711s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001102s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001303s ]
+SQL: SHOW COLUMNS FROM `cms_position_content` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `cms_position_content` WHERE `status` <> -1 AND `position_id` = 2 LIMIT 0,1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `cms_position_content` WHERE `status` <> -1 AND `position_id` = 3 LIMIT 0,3   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `cms_news` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `cms_news` WHERE `status` <> -1 AND `thumb` <> '' ORDER BY listorder desc,news_id desc LIMIT 0,30   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `cms_position_content` WHERE `status` <> -1 AND `position_id` = 5 LIMIT 0,2   [ RunTime:0.0026s ]
+SQL: SELECT * FROM `cms_news` WHERE `status` <> -1 ORDER BY count desc,news_id desc LIMIT 0,10   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000129s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000321s ]
+NOTIC: [2048] Declaration of Common\Model\BasicModel::save() should be compatible with Think\Model::save($data = '', $options = Array) D:\wamp64\www\singcms\Application\Common\Model\BasicModel.class.php 第 19 行.
+NOTIC: [2048] Declaration of Common\Model\BasicModel::select() should be compatible with Think\Model::select($options = Array) D:\wamp64\www\singcms\Application\Common\Model\BasicModel.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 0 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 29 行.
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 30 行.
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 30 行.
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 30 行.
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 30 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031427s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031613s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000813s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000984s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001078s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001275s ]
+
+[ 2016-08-13T00:28:42+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000628s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000969s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001201s ]
+SQL: SHOW COLUMNS FROM `cms_position_content` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `cms_position_content` WHERE `status` <> -1 AND `position_id` = 2 LIMIT 0,1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `cms_position_content` WHERE `status` <> -1 AND `position_id` = 3 LIMIT 0,3   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `cms_news` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `cms_news` WHERE `status` <> -1 AND `thumb` <> '' ORDER BY listorder desc,news_id desc LIMIT 0,30   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `cms_position_content` WHERE `status` <> -1 AND `position_id` = 5 LIMIT 0,2   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `cms_news` WHERE `status` <> -1 ORDER BY count desc,news_id desc LIMIT 0,10   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000072s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000180s ]
+NOTIC: [2048] Declaration of Common\Model\BasicModel::save() should be compatible with Think\Model::save($data = '', $options = Array) D:\wamp64\www\singcms\Application\Common\Model\BasicModel.class.php 第 19 行.
+NOTIC: [2048] Declaration of Common\Model\BasicModel::select() should be compatible with Think\Model::select($options = Array) D:\wamp64\www\singcms\Application\Common\Model\BasicModel.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 0 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 29 行.
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 30 行.
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 30 行.
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 30 行.
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 30 行.
+NOTIC: [8] Undefined index: admin D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 64 行.
+NOTIC: [8] Undefined index: admin D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 64 行.
+NOTIC: [8] Undefined index: admin D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 64 行.
+NOTIC: [8] Undefined index: admin D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 64 行.
+NOTIC: [8] Undefined index: admin D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 64 行.
+NOTIC: [8] Undefined index: admin D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 64 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021909s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022039s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000598s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000729s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001617s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001759s ]
+
+[ 2016-08-13T00:29:14+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000982s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001136s ]
+SQL: SHOW COLUMNS FROM `cms_position_content` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `cms_position_content` WHERE `status` <> -1 AND `position_id` = 2 LIMIT 0,1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `cms_position_content` WHERE `status` <> -1 AND `position_id` = 3 LIMIT 0,3   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `cms_news` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `cms_news` WHERE `status` <> -1 AND `thumb` <> '' ORDER BY listorder desc,news_id desc LIMIT 0,30   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `cms_position_content` WHERE `status` <> -1 AND `position_id` = 5 LIMIT 0,2   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `cms_news` WHERE `status` <> -1 ORDER BY count desc,news_id desc LIMIT 0,10   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000075s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000186s ]
+NOTIC: [2048] Declaration of Common\Model\BasicModel::save() should be compatible with Think\Model::save($data = '', $options = Array) D:\wamp64\www\singcms\Application\Common\Model\BasicModel.class.php 第 19 行.
+NOTIC: [2048] Declaration of Common\Model\BasicModel::select() should be compatible with Think\Model::select($options = Array) D:\wamp64\www\singcms\Application\Common\Model\BasicModel.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 0 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 29 行.
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 30 行.
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 30 行.
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 30 行.
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 30 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018102s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018262s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000678s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000838s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000858s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001023s ]
+
+[ 2016-08-13T00:29:43+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000469s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000678s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000833s ]
+SQL: SHOW COLUMNS FROM `cms_position_content` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `cms_position_content` WHERE `status` <> -1 AND `position_id` = 2 LIMIT 0,1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `cms_position_content` WHERE `status` <> -1 AND `position_id` = 3 LIMIT 0,3   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `cms_news` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `cms_news` WHERE `status` <> -1 AND `thumb` <> '' ORDER BY listorder desc,news_id desc LIMIT 0,30   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `cms_position_content` WHERE `status` <> -1 AND `position_id` = 5 LIMIT 0,2   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `cms_news` WHERE `status` <> -1 ORDER BY count desc,news_id desc LIMIT 0,10   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000087s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000220s ]
+NOTIC: [2048] Declaration of Common\Model\BasicModel::save() should be compatible with Think\Model::save($data = '', $options = Array) D:\wamp64\www\singcms\Application\Common\Model\BasicModel.class.php 第 19 行.
+NOTIC: [2048] Declaration of Common\Model\BasicModel::select() should be compatible with Think\Model::select($options = Array) D:\wamp64\www\singcms\Application\Common\Model\BasicModel.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 0 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 29 行.
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 30 行.
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 30 行.
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 30 行.
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 30 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019110s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000525s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000620s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000594s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000694s ]
+
+[ 2016-08-13T00:29:54+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000417s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000557s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000666s ]
+SQL: SHOW COLUMNS FROM `cms_position_content` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `cms_position_content` WHERE `status` <> -1 AND `position_id` = 2 LIMIT 0,1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `cms_position_content` WHERE `status` <> -1 AND `position_id` = 3 LIMIT 0,3   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `cms_news` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `cms_news` WHERE `status` <> -1 AND `thumb` <> '' ORDER BY listorder desc,news_id desc LIMIT 0,30   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `cms_position_content` WHERE `status` <> -1 AND `position_id` = 5 LIMIT 0,2   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `cms_news` WHERE `status` <> -1 ORDER BY count desc,news_id desc LIMIT 0,10   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000069s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000177s ]
+NOTIC: [2048] Declaration of Common\Model\BasicModel::save() should be compatible with Think\Model::save($data = '', $options = Array) D:\wamp64\www\singcms\Application\Common\Model\BasicModel.class.php 第 19 行.
+NOTIC: [2048] Declaration of Common\Model\BasicModel::select() should be compatible with Think\Model::select($options = Array) D:\wamp64\www\singcms\Application\Common\Model\BasicModel.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 0 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 29 行.
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 30 行.
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 30 行.
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 30 行.
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 30 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016944s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017065s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000514s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000612s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000603s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000773s ]
+
+[ 2016-08-13T00:30:11+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000499s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000830s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000983s ]
+SQL: SHOW COLUMNS FROM `cms_position_content` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `cms_position_content` WHERE `status` <> -1 AND `position_id` = 2 LIMIT 0,1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `cms_position_content` WHERE `status` <> -1 AND `position_id` = 3 LIMIT 0,3   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `cms_news` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `cms_news` WHERE `status` <> -1 AND `thumb` <> '' ORDER BY listorder desc,news_id desc LIMIT 0,30   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `cms_position_content` WHERE `status` <> -1 AND `position_id` = 5 LIMIT 0,2   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `cms_news` WHERE `status` <> -1 ORDER BY count desc,news_id desc LIMIT 0,10   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000118s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000316s ]
+NOTIC: [2048] Declaration of Common\Model\BasicModel::save() should be compatible with Think\Model::save($data = '', $options = Array) D:\wamp64\www\singcms\Application\Common\Model\BasicModel.class.php 第 19 行.
+NOTIC: [2048] Declaration of Common\Model\BasicModel::select() should be compatible with Think\Model::select($options = Array) D:\wamp64\www\singcms\Application\Common\Model\BasicModel.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 0 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 29 行.
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 30 行.
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 30 行.
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 30 行.
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 30 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024193s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024370s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001137s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001290s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001292s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001463s ]
+
+[ 2016-08-13T00:30:24+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001754s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001138s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001353s ]
+SQL: SHOW COLUMNS FROM `cms_position_content` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `cms_position_content` WHERE `status` <> -1 AND `position_id` = 2 LIMIT 0,1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `cms_position_content` WHERE `status` <> -1 AND `position_id` = 3 LIMIT 0,3   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `cms_news` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `cms_news` WHERE `status` <> -1 AND `thumb` <> '' ORDER BY listorder desc,news_id desc LIMIT 0,30   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `cms_position_content` WHERE `status` <> -1 AND `position_id` = 5 LIMIT 0,2   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `cms_news` WHERE `status` <> -1 ORDER BY count desc,news_id desc LIMIT 0,10   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000077s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000226s ]
+NOTIC: [2048] Declaration of Common\Model\BasicModel::save() should be compatible with Think\Model::save($data = '', $options = Array) D:\wamp64\www\singcms\Application\Common\Model\BasicModel.class.php 第 19 行.
+NOTIC: [2048] Declaration of Common\Model\BasicModel::select() should be compatible with Think\Model::select($options = Array) D:\wamp64\www\singcms\Application\Common\Model\BasicModel.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 0 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 29 行.
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 30 行.
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 30 行.
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 30 行.
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 30 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024520s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024736s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000987s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001196s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001419s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001627s ]
+
+[ 2016-08-13T00:33:00+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000723s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001066s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001323s ]
+SQL: SHOW COLUMNS FROM `cms_position_content` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `cms_position_content` WHERE `status` <> -1 AND `position_id` = 2 LIMIT 0,1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `cms_position_content` WHERE `status` <> -1 AND `position_id` = 3 LIMIT 0,3   [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `cms_news` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `cms_news` WHERE `status` <> -1 AND `thumb` <> '' ORDER BY listorder desc,news_id desc LIMIT 0,30   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `cms_position_content` WHERE `status` <> -1 AND `position_id` = 5 LIMIT 0,2   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `cms_news` WHERE `status` <> -1 ORDER BY count desc,news_id desc LIMIT 0,10   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000130s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000323s ]
+NOTIC: [2048] Declaration of Common\Model\BasicModel::save() should be compatible with Think\Model::save($data = '', $options = Array) D:\wamp64\www\singcms\Application\Common\Model\BasicModel.class.php 第 19 行.
+NOTIC: [2048] Declaration of Common\Model\BasicModel::select() should be compatible with Think\Model::select($options = Array) D:\wamp64\www\singcms\Application\Common\Model\BasicModel.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `cms_menu` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `cms_menu` WHERE `status` <> -1 AND `type` = 0 ORDER BY listorder desc,menu_id desc  [ RunTime:0.0009s ]
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 29 行.
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 30 行.
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 30 行.
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 30 行.
+NOTIC: [8] Undefined index: catid D:\wamp64\www\singcms\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 30 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.040140s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.040350s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000728s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000893s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000909s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001088s ]
+
+[ 2016-08-13T00:33:03+08:00 ] 127.0.0.1 /index.php?c=detail&id=34
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000602s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000513s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000628s ]
+ERR: 无法加载控制器:Detail
+
+[ 2016-08-13T00:33:07+08:00 ] 127.0.0.1 /index.php?c=detail&id=34
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001114s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001390s ]
+ERR: 无法加载控制器:Detail
+

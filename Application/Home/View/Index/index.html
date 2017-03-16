@@ -1,0 +1,61 @@
+<?php
+ $config = D("Basic")->select();
+?>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{$config.title}</title>
+  <meta name="keywords" content="{$config.keywords}"/>
+  <meta name="description" content="{$config.description}"/>
+  <link rel="stylesheet" href="/Public/css/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="/Public/css/home/main.css" type="text/css" />
+</head>
+<body>
+<include file="Index/header" />
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-9">
+        <div class="banner">
+          <div class="banner-left">
+            <div class="banner-info"><span>阅读数</span><i class="news_count node-{$result['topPicNews'][0]['news_id']}" news-id="{$result['topPicNews'][0]['news_id']}"></i></div>
+            <a target="_blank" href="/index.php?c=detail&id={$result['topPicNews'][0]['news_id']}"><img width="670" height="360" src="{$result['topPicNews'][0]['thumb']}" alt="{$result['topPicNews'][0]['title']}"></a>
+          </div>
+          <div class="banner-right">
+            <ul>
+              <foreach name="result['topSmallNews']" item ="vo">
+					<li><a href="/index.php?c=detail&id={$vo.news_id}" ><img width="150" height="113" src="{$vo.thumb}" alt="{$vo.title}"></a></li>
+			 </foreach>
+              <li>
+                
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="news-list">
+        <volist name="result['listNews']" id="vo">
+          <dl>
+            <a target="_blank" href="/index.php?c=detail&id={$vo.news_id}"><dt>{$vo.title}</dt></a>
+            <dd class="news-img">
+              <a target="_blank" href="/index.php?c=detail&id={$vo.news_id}"><img width ="200" height="120" src="{$vo.thumb}" alt="{$vo.title}"></a>
+            </dd>
+            <dd class="news-intro">
+              {$vo.description}
+            </dd>
+            <dd class="news-info">
+              {$vo.username} <span>{$vo.create_time|date="Y-m-d H:i:s",###}</span> 阅读<i class="news_count node-{$vo.news_id}" news-id="{$vo.news_id}">{$vo.count}</i>
+            </dd>
+          </dl>
+          </volist>
+        </div>
+      </div>
+      <include file="Index/right" />
+    </div>
+  </div>
+</section>
+</body>
+<script src="/Public/js/jquery.js"></script>
+<script src="/Public/js/conut.js">
+</script>
+</html>

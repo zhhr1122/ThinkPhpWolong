@@ -1,0 +1,81 @@
+basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.dltk.core 4 0 2016-09-13 22:35:27.442
+!MESSAGE Error retrieving contents of function.html_select_time.php
+!STACK 1
+org.eclipse.dltk.core.ModelException: File not found: D:\wamp64\www\singcms\ThinkPHP\Library\Vendor\Smarty\plugins\function.html_select_time.php.
+	at org.eclipse.dltk.internal.core.util.Util.getResourceContentsAsCharArray(Util.java:539)
+	at org.eclipse.dltk.internal.core.util.Util.getResourceContentsAsCharArray(Util.java:491)
+	at org.eclipse.dltk.internal.core.SourceModule.getBufferContent(SourceModule.java:370)
+	at org.eclipse.dltk.internal.core.AbstractSourceModule.getSourceAsCharArray(AbstractSourceModule.java:333)
+	at org.eclipse.dltk.internal.core.builder.AbstractBuildContext.getContents(AbstractBuildContext.java:70)
+	at org.eclipse.php.internal.core.builder.OrganizeBuildParticipantFactory$OrganizeBuildParticipantParticipant.build(OrganizeBuildParticipantFactory.java:92)
+	at org.eclipse.dltk.internal.core.builder.StandardScriptBuilder.buildModule(StandardScriptBuilder.java:243)
+	at org.eclipse.dltk.internal.core.builder.StandardScriptBuilder.buildNatureModules(StandardScriptBuilder.java:177)
+	at org.eclipse.dltk.internal.core.builder.StandardScriptBuilder.build(StandardScriptBuilder.java:74)
+	at org.eclipse.dltk.internal.core.builder.ScriptBuilder.fullBuild(ScriptBuilder.java:449)
+	at org.eclipse.dltk.internal.core.builder.ScriptBuilder.build(ScriptBuilder.java:155)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.eclipse.core.runtime.CoreException: File not found: D:\wamp64\www\singcms\ThinkPHP\Library\Vendor\Smarty\plugins\function.html_select_time.php.
+	at org.eclipse.core.internal.filesystem.Policy.error(Policy.java:49)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:391)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:834)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:269)
+	at org.eclipse.dltk.internal.core.util.Util.getResourceContentsAsCharArray(Util.java:534)
+	... 22 more
+Caused by: java.io.FileNotFoundException: D:\wamp64\www\singcms\ThinkPHP\Library\Vendor\Smarty\plugins\function.html_select_time.php (系统找不到指定的路径。)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:382)
+	... 25 more
+!SUBENTRY 1 org.eclipse.dltk.core 4 969 2016-09-13 22:35:27.442
+!MESSAGE File not found: D:\wamp64\www\singcms\ThinkPHP\Library\Vendor\Smarty\plugins\function.html_select_time.php.
+!STACK 1
+org.eclipse.core.runtime.CoreException: File not found: D:\wamp64\www\singcms\ThinkPHP\Library\Vendor\Smarty\plugins\fplate_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000119s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000309s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008843s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009038s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000594s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000757s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001009s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001238s ]
+
+[ 2016-08-05T17:45:19+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000688s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000934s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001138s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000126s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000337s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011401s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011629s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000807s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001061s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001312s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001594s ]
+
