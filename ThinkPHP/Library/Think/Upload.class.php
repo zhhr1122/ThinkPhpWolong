@@ -311,6 +311,7 @@ class Upload {
      * @param string $errorNo  错误号
      */
     private function error($errorNo) {
+        echo $errorNo;
         switch ($errorNo) {
             case 1:
                 $this->error = '上传的文件超过了 php.ini 中 upload_max_filesize 选项限制的值！';
