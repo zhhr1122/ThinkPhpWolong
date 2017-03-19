@@ -47,7 +47,7 @@
             <ul>
               <?php if(is_array($result['topSmallNews'])): foreach($result['topSmallNews'] as $key=>$vo): ?><li><a href="/index.php?c=detail&id=<?php echo ($vo["news_id"]); ?>" ><img width="150" height="113" src="<?php echo ($vo["thumb"]); ?>" alt="<?php echo ($vo["title"]); ?>"></a></li><?php endforeach; endif; ?>
               <li>
-                
+
               </li>
             </ul>
           </div>
@@ -94,6 +94,33 @@
     </div>
   </div>
 </section>
+
+<!doctype html>
+<html lang="en">
+<div class="footer" style="    width: 100%;
+    background: #262626;
+    overflow: hidden;
+    padding: 25px 0 25px 0;">
+    <div style="width: 1002px;
+    margin: auto;
+    text-align: center;
+    color: #bababa;
+    line-height: 25px;">
+        Copyright &copy; 2016 All Rights Reserved 版权所有 &copy; 深圳卧龙世纪科技有限公司
+        粤ICP备16085155号-1　
+        联系电话：0755-86100060　
+        联系人：阿鑫                   </div>
+    <div class="footer2" style="    width: 1002px;
+    height: 63px;
+    overflow: hidden;
+    margin: auto;
+    text-align: center;">
+        <!--判断语句-->
+        <img src="http://120.24.5.120/wp-content/uploads/2016/09/logo-1.png" />                       <!--输出语句-->
+    </div>
+    <div style=" text-align:center;"><script language=\"javascript\" type=\"text/javascript\" src=\"http://js.users.51.la/18970568.js\"></script></div>
+</div>
+</html>
 </body>
 <script src="/Public/js/jquery.js"></script>
 <script src="/Public/js/conut.js">
