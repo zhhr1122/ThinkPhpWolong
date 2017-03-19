@@ -16,7 +16,7 @@ class UploadImageModel extends Model {
         $this->_uploadObj = new  \Think\Upload();
 
         $this->_uploadObj->rootPath = './'.self::UPLOAD.'/';
-        $this->_uploadObj->subName = date(Y) . '/' . date(m) .'/' . date(d);
+        $this->_uploadObj->subName ='';
     }
 
     public function upload() {
