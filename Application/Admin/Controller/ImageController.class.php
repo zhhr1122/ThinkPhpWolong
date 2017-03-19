@@ -28,8 +28,12 @@ class ImageController extends CommonController
         $upload = D("UploadImage");
         $res = $upload->upload();
         if($res==false){
+            echo "false";
+            echo $upload->getError();
             return showKind(1,'上传失败');
         }else{
+            echo "success";
+            echo $upload->getError();
             return showKind(0,$res);
         }
     }
