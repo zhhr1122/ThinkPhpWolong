@@ -6,7 +6,7 @@ body{
 	background: #262626;
 }
 .navbar-inverse .navbar-nav{
-	padding-left: 45px;
+	padding-left: 10px;
 }
 .navbar-inverse .navbar-nav>li>a{
 	font-size: 16px;
@@ -271,4 +271,17 @@ body{
 .news-detail{
 	width:858px;
 	overflow:hidden
+}
+#footer {
+	width: 100%;
+	background: #262626;
+	overflow: hidden;
+	padding: 25px 0 25px 0;
+}
+#footer1 f_bq {
+	width: 1002px;
+	margin: auto;
+	text-align: center;
+	color: #bababa;
+	line-height: 25px;
 }
