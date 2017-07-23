@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>卧龙渠道</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        body{
+            width: 100%;
+            background: #2A3F54;
+            min-width: 1000px;
+        }
+
+        .content_left{
+            width: 20%;
+            height: 1000px;
+            background: #2A3F54;
+            float: left;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .content_right{
+            float: right;
+            background: rgb(247,247,247);
+            width: 80%;
+            height: 1000px;
+        }
+
+        .content_left div img{
+            margin-top: 10px;
+        }
+
+
+        .content_left .left_user{
+            width: 100%;
+            margin-top: 55px;
+        }
+        .content_left .left_user img{
+            width: 80px;
+            height: 80px;
+            vertical-align: middle;
+            border-radius: 50%;
+            background: #fff;
+            border: 1px solid rgba(52, 73, 94, 0.44);
+            padding: 4px;
+        }
+
+        .content_left .left_user p{
+            margin-top: 20px;
+        }
+
+        .content_left .left_tab{
+            margin-top: 100px;
+            height: 120px;
+        }
+
+        .content_left .left_tab div{
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            border-right: 5px solid forestgreen;
+            cursor: pointer;
+        }
+
+        .content_left .left_tab div:hover{
+            background:forestgreen;
+        }
+
+        .content_right .right_top{
+            height: 80px;
+            background: rgb(237,237,237);
+            border: solid 1px lightgray;
+        }
+
+        .content_right .right_top h2{
+            line-height: 80px;
+            margin-left: 25px;
+            color: rgb(115, 135, 156);
+        }
+
+        .right_container{
+            position: relative;
+            width: 100%;
+            height: 920px;
+            background: rgb(247,247,247);
+        }
+
+        .right_container .right_content{
+            float: left;
+            width: 100%;
+            height: 800px;
+            margin-top: 60px;
+            background: white;
+        }
+
+        .right_container .change_pass{
+            float: left;
+            width: 100%;
+            height: 800px;
+            background: white;
+            margin-top: 60px;
+            margin-left: -100%;
+        }
+
+        .right_container .right_content div{
+            padding: 15px 50px;
+            color: rgb(115, 135, 156);
+        }
+        .right_container .right_content .right_pn select{
+            height: 30px;
+            width: 100px;
+        }
+        .right_container .right_content .right_byday div{
+            padding: 0;
+            display: inline-block;
+        }
+
+        .sub_button{
+            font-size: 14px;
+            color: white;
+            padding: 5px 10px;
+            margin: 0 10px;
+            background: #2A3F54;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .sub_button:hover{
+            background: rgb(115, 135, 156);
+        }
+        .sub_button:active{
+            background: #2A3F54;
+        }
+        .right_content .right_table table{
+            width: 100%;
+            border-spacing: 0;
+            border: #dddddd solid 1px;
+        }
+        .right_content .right_table table thead{
+            line-height: 40px;
+            background: #2A3F54;
+            color: white;
+        }
+
+        .right_content .right_table table tbody tr:nth-child(odd){
+            background: rgb(237,237,237);
+        }
+
+        .right_content .right_table table tfoot td {
+            line-height: 50px;
+            height: 50px;
+            border: none;
+        }
+
+        .right_content .right_table table tfoot td div {
+            padding: 0;
+            color: #2A3F54;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        .right_content .right_table table td{
+            border-bottom: #dddddd solid 1px;
+            height: 40px;
+            padding: 0 10px;
+        }
+
+        .right_content .excel {
+            position: absolute;
+            right: 0;
+            top:0;
+        }
+
+        .right_content .excel .sub_button{
+            background: forestgreen;
+        }
+
+        .change_pass .pass_content{
+            width: 500px;
+            height: 300px;
+            margin: 200px auto;
+        }
+
+        .change_pass .pass_content table{
+            font-size: 20px;
+            color: #2A3F54;
+            margin: 0 auto;
+        }
+
+        .change_pass .pass_content table td{
+            height: 50px;
+        }
+        .change_pass .pass_content table tbody input{
+            height: 20px;
+            padding: 5px;
+        }
+        .change_pass .pass_content table tbody td:nth-child(1){
+            text-align: right;
+        }
+
+        .change_pass .pass_content table tbody td:nth-child(2){
+            text-align: left;
+        }
+
+        .change_pass .pass_content table tfoot td{
+            text-align: center;
+        }
+
+        .right_content .right_table .page_ul li{
+            list-style: none;
+            display: inline-block;
+            border-left: 1px solid lightgray;
+            border-top: 1px solid lightgray;
+            border-bottom: 1px solid lightgray;
+            cursor: pointer;
+            height: 30px;
+            padding: 0 10px;
+            line-height: 30px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .right_content .right_table .page_ul li:hover{
+            background: gainsboro;
+        }
+
+        .right_content .right_table .page_ul .prev{
+            border-radius: 3px 0 0 3px;
+        }
+        .right_content .right_table .page_ul .next{
+            border-radius: 0 3px 3px 0;
+            border-right: 1px solid lightgray;
+        }
+        .right_content .right_table .page_ul li a{
+            text-decoration: none;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+
+        }
+        .right_content .right_table .page_ul li a:link{
+            color: #2A3F54;
+        }
+        .right_content .right_table .page_ul li a:visited{
+            color: #2A3F54;
+        }
+        .right_content .right_table .page_ul li a:hover{
+            color: forestgreen;
+        }
+        .right_content .right_table .page_ul li a:active{
+            color:  #2A3F54;
+        }
+    </style>
+
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="jqPaginator.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#div_pass").hide();
+            $("#tab_list").click(function () {
+                $("#div_pass").hide();
+                $("#excel_button").show();
+                $(".right_top h2").text("数据列表");
+            });
+            $("#tab_pass").click(function () {
+                $("#div_pass").show();
+                $("#excel_button").hide();
+                $(".right_top h2").text("修改密码");
+            });
+
+            $("#pagetest").jqPaginator({
+                    totalPages: 100,
+                    visiblePages: 10,
+                    currentPage: 1,
+                    visiblePages:7,
+                    wrapper:'<ul class="page_ul"></ul>',
+//                    first: '<li class="first"><a href="javascript:void(0);">First</a></li>',
+                    prev: '<li class="prev"><a href="javascript:void(0);">Previous</a></li>',
+                    next: '<li class="next"><a href="javascript:void(0);">Next</a></li>',
+//                    last: '<li class="last"><a href="javascript:void(0);">Last</a></li>',
+                    page: '<li class="page"><a href="javascript:void(0);">{{page}}</a></li>',
+                    onPageChange: function (num) {
+                        $("#page_num").text("第 "+num+" 页");
+                    }
+                });
+        });
+    </script>
+</head>
+<body>
+
+<div class="content_left">
+    <div>
+        <img src="http://www.iwolong.com/Public/images/logo.png" alt="卧龙游戏">
+    </div>
+    <div class="left_user">
+        <img src="http://channel.adflying.com/Channel/Home/View/Public/images/img.jpg" alt="User">
+        <p>User</p>
+    </div>
+    
+    <div class="left_tab">
+        <div id="tab_list">
+            数据列表
+        </div>
+        <div id="tab_pass">
+            修改密码
+        </div>
+    </div>
+</div>
+<div class="content_right">
+<div class="right_top">
+    <h2>数据列表</h2>
+</div>
+    <div class="right_container">
+        <div id="div_right_content" class="right_content">
+            <div class="excel">
+            <button class="sub_button" id="excel_button" type="button">导出Excel</button>
+            </div>
+            <form action="#">
+                <div class="right_pn">
+                    <span>渠道名称：卧龙</span>
+
+                </div>
+            <div class="right_pn">
+                <span>渠道项目号：</span>
+                <select name="channel_pn" id="pn_select">
+                    <option value="pn_all">
+                        全部
+                    </option>
+                    <option value="pn_201718">
+                        pn_201718
+                    </option>
+                </select>
+            </div>
+            <div class="right_byday">
+                <span>最近查询：</span>
+                <div>
+                    <button class="sub_button" type="button">一周</button>
+                    <button class="sub_button" type="button">一月</button>
+                    <button class="sub_button" type="button">三月</button>
+                </div>
+            </div>
+            <div class="right_between">
+                <span>区间查询：</span>
+                <input type="date"><span>&nbsp;至&nbsp;</span>
+                <input type="date">
+                <input class="sub_button" type="submit" value="查询">
+            </div>
+            <div class="right_table">
+                <table>
+                    <thead>
+                    <tr>
+                        <td>日期</td>
+                        <td>渠道名称</td>
+                        <td>渠道项目号</td>
+                        <td>收益</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>2017-7-18</td>
+                        <td>卧龙</td>
+                        <td>2017718</td>
+                        <td>10000</td>
+                    </tr>
+                    <tr>
+                        <td>2017-7-18</td>
+                        <td>卧龙</td>
+                        <td>2017718</td>
+                        <td>10000</td>
+                    </tr>
+                    <tr>
+                        <td>2017-7-18</td>
+                        <td>卧龙</td>
+                        <td>2017718</td>
+                        <td>10000</td>
+                    </tr>
+                    <tr>
+                        <td>2017-7-18</td>
+                        <td>卧龙</td>
+                        <td>2017718</td>
+                        <td>10000</td>
+                    </tr>
+
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="4">
+                            <div style="float: left;">
+                                <span>共计 10 条记录，收益合计：100000</span>
+                            </div>
+
+                            <div class="foot_right" style="float: right;">
+                                <span id="page_num" style="margin-left: -60px;float: left">第 1 页</span>
+                                <div  id="pagetest" class="table_paged"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+            </form>
+        </div>
+        <div id="div_pass" class="change_pass">
+            <div class="pass_content">
+                <form action="#">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td>当前密码：</td>
+                            <td><input type="password"></td>
+                        </tr>
+                        <tr>
+                            <td>新密码：</td>
+                            <td><input type="password"></td>
+                        </tr>
+                        <tr>
+                            <td>再次输入：</td>
+                            <td><input type="password"></td>
+                        </tr>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td colspan="2"><input class="sub_button" type="submit"></td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
