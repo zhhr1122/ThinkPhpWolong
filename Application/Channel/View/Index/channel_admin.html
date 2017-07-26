@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>卧龙渠道管理</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        body{
+            width: 100%;
+            background: #2A3F54;
+            min-width: 1000px;
+        }
+
+        .content_left{
+            width: 20%;
+            height: 1000px;
+            background: #2A3F54;
+            float: left;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .content_right{
+            float: right;
+            background: rgb(247,247,247);
+            width: 80%;
+            height: 1000px;
+        }
+
+        .content_left div img{
+            margin-top: 10px;
+        }
+
+
+        .content_left .left_user{
+            width: 100%;
+            margin-top: 55px;
+        }
+        .content_left .left_user img{
+            width: 80px;
+            height: 80px;
+            vertical-align: middle;
+            border-radius: 50%;
+            background: #fff;
+            border: 1px solid rgba(52, 73, 94, 0.44);
+            padding: 4px;
+        }
+
+        .content_left .left_user p{
+            margin-top: 20px;
+        }
+
+        .content_left .left_tab{
+            margin-top: 100px;
+            height: 120px;
+        }
+
+        .content_left .left_tab div{
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            border-right: 5px solid forestgreen;
+            cursor: pointer;
+        }
+
+        .content_left .left_tab div:hover{
+            background:forestgreen;
+        }
+
+        .content_right .right_top{
+            height: 80px;
+            background: rgb(237,237,237);
+            border: solid 1px lightgray;
+        }
+
+        .content_right .right_top h2{
+            line-height: 80px;
+            margin-left: 25px;
+            float: left;
+            color: rgb(115, 135, 156);
+        }
+
+        .right_container{
+            position: relative;
+            width: 100%;
+            height: 920px;
+            background: rgb(247,247,247);
+        }
+
+        .right_container .right_pannel{
+            width: 95%;
+            height: 800px;
+            background: white;
+            margin-top: 60px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .right_container .right_content div{
+            padding: 15px 50px;
+            color: rgb(115, 135, 156);
+        }
+        .right_container .right_content .right_pn select{
+            height: 30px;
+            width: 100px;
+        }
+        .right_container .right_content .right_byday div{
+            padding: 0;
+            display: inline-block;
+        }
+
+        .sub_button{
+            font-size: 14px;
+            color: white;
+            padding: 5px 10px;
+            margin: 0 10px;
+            background: #2A3F54;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .sub_button:hover{
+            background: rgb(115, 135, 156);
+        }
+        .sub_button:active{
+            background: #2A3F54;
+        }
+        .right_container .common_table{
+            width: 100%;
+            border-spacing: 0;
+            border: #dddddd solid 1px;
+        }
+        .right_container .common_table thead{
+            line-height: 40px;
+            background: #2A3F54;
+            color: white;
+        }
+
+        .right_container .common_table tbody tr:nth-child(odd){
+            background: rgb(237,237,237);
+        }
+
+        .right_container .common_table tfoot td {
+            line-height: 50px;
+            height: 50px;
+            border: none;
+        }
+
+        .right_container .common_table tfoot td div {
+            padding: 0;
+            color: #2A3F54;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        .right_container .common_table td{
+            border-bottom: #dddddd solid 1px;
+            height: 40px;
+            padding: 0 10px;
+        }
+
+        .right_content .excel {
+            position: absolute;
+            right: 0;
+            top:-60px;
+        }
+
+        .right_content .excel .sub_button{
+            background: forestgreen;
+        }
+
+        .change_pass .pass_content{
+            width: 500px;
+            height: 300px;
+            margin: 0 auto;
+            padding: 200px 0;
+        }
+
+        .change_pass .pass_content table{
+
+            font-size: 20px;
+            color: #2A3F54;
+            margin: 0 auto;
+        }
+
+        .change_pass .pass_content table td{
+            height: 50px;
+        }
+        .change_pass .pass_content table tbody input{
+            height: 20px;
+            padding: 5px;
+        }
+        .change_pass .pass_content table tbody td:nth-child(1){
+            text-align: right;
+        }
+
+        .change_pass .pass_content table tbody td:nth-child(2){
+            text-align: left;
+        }
+
+        .change_pass .pass_content table tfoot td{
+            text-align: center;
+        }
+
+        .table_paged .page_ul li{
+            list-style: none;
+            display: inline-block;
+            border-left: 1px solid lightgray;
+            border-top: 1px solid lightgray;
+            border-bottom: 1px solid lightgray;
+            cursor: pointer;
+            height: 30px;
+            padding: 0 10px;
+            line-height: 30px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .table_paged .page_ul li:hover{
+            background: gainsboro;
+        }
+
+        .table_paged .page_ul .prev{
+            border-radius: 3px 0 0 3px;
+        }
+        .table_paged .page_ul .next{
+            border-radius: 0 3px 3px 0;
+            border-right: 1px solid lightgray;
+        }
+        .table_paged .page_ul li a{
+            text-decoration: none;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+
+        }
+        .table_paged .page_ul li a:link{
+            color: #2A3F54;
+        }
+        .table_paged .page_ul li a:visited{
+            color: #2A3F54;
+        }
+        .table_paged .page_ul li a:hover{
+            color: forestgreen;
+        }
+        .table_paged .page_ul li a:active{
+            color:  #2A3F54;
+        }
+
+        #div_channel .channel_pannel{
+            width: 900px;
+            position: absolute;
+            left: 50%;
+            margin-left: -450px;
+        }
+        #div_channel .channel_pannel table{
+            width: 100%;
+        }
+
+        #div_channel .add_channel {
+            height: 200px;
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        #div_channel .add_channel ul{
+            color: white;
+            background: #2A3F54;
+            position: absolute;
+            top: 100px;
+            padding: 5px 20px;
+            cursor: pointer;
+        }
+        #div_channel .add_channel ul li{
+            list-style: none;
+            width: 500px;
+            color: #2A3F54;
+            position: absolute;
+            top:-100px;
+            left: 100px;
+        }
+        #div_channel .add_channel form table{
+            width: 300px;
+            margin: 0 auto;
+        }
+        #div_channel .add_channel form table td{
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+
+    <script src="/Public/js/jquery.js"></script>
+    <script src="/Public/js/jqPaginator.min.js"></script>
+    <script>
+
+        function hideall() {
+            $("#div_pass").hide();
+            $("#excel_button").hide();
+            $("#div_channel").hide();
+            $("#div_prop").hide();
+            $("#div_right_content").hide();
+        }
+
+        function deleteUser(ucid) {
+
+            if(window.confirm("你确定删除渠道号为："+ucid+"的用户吗")){
+                $.ajax({
+                    url:'/index.php/Channel/RestFull/deleteUser',
+                    type:'post',
+                    data:{ucid:ucid},
+                    success:function(data) {
+                        if(data.msg =="success" ){
+                            alert("删除成功！");
+                            window.location.reload();
+                        }else{
+                        }
+                    },
+                    error : function() {
+                        alert("删除失败！");
+                    }
+                });
+                return false;
+
+            }else{
+                return false;
+            }
+
+
+        }
+        $(document).ready(function(){
+            hideall();
+            $("#div_channel").show();
+            $("#excel_button").show();
+
+            $("#tab_list").click(function () {
+                hideall();
+                $("#div_right_content").show();
+                $("#excel_button").show();
+                $(".right_top h2").text("数据管理");
+            });
+
+            $("#tab_pass").click(function () {
+                hideall();
+                $("#div_pass").show();
+                $(".right_top h2").text("修改密码");
+            });
+
+            $("#tab_channel").click(function () {
+                hideall();
+                $("#div_channel").show();
+                $(".right_top h2").text("渠道管理");
+            });
+
+            $("#tab_prop").click(function () {
+                hideall();
+                $("#div_prop").show();
+                $(".right_top h2").text("字段管理");
+            });
+
+            function getChannelUser(flag,pageIndex) {
+                $("#table_channel tbody tr").remove();
+                $.getJSON("/index.php/Channel/RestFull/getUser",{page:pageIndex},function(data,status){
+                    $("#page_count").text("共计 "+data.totalRecord+" 条记录");
+                    $.each(data.records,function(index, v){
+                        $("#table_channel tbody").append("<tr>"
+                            +"<td>"+v.uaddtime+"</td>"
+                            +"<td>"+v.uname+"</td>"
+                            +"<td>"+v.ucid+"</td>"
+                            +"<td>"+v.uaccount+"</td>"
+                            +"<td>"+v.upassword+"</td>"
+                            +"<td><input type=\"button\" onclick=deleteUser("+v.ucid+") value=\"删除\"></td>"
+                            +"</tr>");
+                    });
+                    if(flag==0){
+                    $("#paged_user").jqPaginator({
+                        totalPages: data.totalPage,
+                        visiblePages: 7,
+                        currentPage: 1,
+                        wrapper:'<ul class="page_ul"></ul>',
+                        first: '<li class="first"><a href="javascript:void(0);">First</a></li>',
+                        prev: '<li class="prev"><a href="javascript:void(0);">Previous</a></li>',
+                        next: '<li class="next"><a href="javascript:void(0);">Next</a></li>',
+                        last: '<li class="last"><a href="javascript:void(0);">Last</a></li>',
+                        page: '<li class="page"><a href="javascript:void(0);">{{page}}</a></li>',
+                        onPageChange: function (num) {
+                            getChannelUser(1,num);
+                            $("#page_num_user").text("第 "+num+" 页");
+                        }
+                    });
+                    }
+                });
+
+            }
+            getChannelUser(0,0);
+            $("#pass_btn").click(function () {
+                if($("#change_new_pass").val() == $("#change_rep_pass").val()){
+                    $("#pass_form").submit();
+                    return true;
+                }else{
+                    alert("两次输入的密码不一致!");
+                    return false;
+                }
+            });
+        });
+
+
+    </script>
+</head>
+<body>
+
+<div class="content_left">
+    <div>
+       <h2 style="margin-top: 20px">管理员后台</h2>
+    </div>
+    <div class="left_user">
+        <img src="http://channel.adflying.com/Channel/Home/View/Public/images/img.jpg" alt="User">
+        <p id="user_name">{$uaccount}</p>
+    </div>
+    
+    <div class="left_tab">
+        <div id="tab_channel">
+            渠道管理
+        </div>
+        <div id="tab_list">
+            数据管理
+        </div>
+        <div id="tab_prop">
+            字段管理
+        </div>
+        <div id="tab_pass">
+            修改密码
+        </div>
+    </div>
+</div>
+<div class="content_right">
+<div class="right_top">
+    <h2>数据管理</h2>
+    <a style="float: right;line-height: 80px;" href="/index.php/Channel/index/logout"><span>退出登录</span></a>
+</div>
+    <div class="right_container">
+        <div id="div_right_content" class="right_content right_pannel">
+            <div class="excel">
+            <button class="sub_button" id="excel_button" type="button">导出Excel</button>
+            </div>
+            <form action="#">
+                <div class="right_pn">
+                    <span>渠道名称：</span>
+                    <select name="channel_name" id="">
+                        <option value="卧龙">卧龙</option>
+                        <option value="掌众">掌众</option>
+                        <option value=""></option>
+                    </select>
+                </div>
+            <!--<div class="right_pn">-->
+                <!--<span>渠道项目号：</span>-->
+                <!--<select name="channel_pn" id="pn_select">-->
+                    <!--<option value="pn_all">-->
+                        <!--全部-->
+                    <!--</option>-->
+                    <!--<option value="pn_201718">-->
+                        <!--pn_201718-->
+                    <!--</option>-->
+                <!--</select>-->
+            <!--</div>-->
+            <div class="right_byday">
+                <span>最近查询：</span>
+                <div>
+                    <button class="sub_button" type="button">一周</button>
+                    <button class="sub_button" type="button">一月</button>
+                    <button class="sub_button" type="button">三月</button>
+                </div>
+            </div>
+            <div class="right_between">
+                <span>区间查询：</span>
+                <input type="date"><span>&nbsp;至&nbsp;</span>
+                <input type="date">
+                <input class="sub_button" type="submit" value="查询">
+            </div>
+            <div class="right_table">
+                <table class="common_table">
+                    <thead>
+                    <tr>
+                        <td>日期</td>
+                        <td>渠道名称</td>
+                        <td>渠道号</td>
+                        <td>收益</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>2017-7-18</td>
+                        <td>卧龙</td>
+                        <td>2017718</td>
+                        <td>10000</td>
+                    </tr>
+                    <tr>
+                        <td>2017-7-18</td>
+                        <td>卧龙</td>
+                        <td>2017718</td>
+                        <td>10000</td>
+                    </tr>
+                    <tr>
+                        <td>2017-7-18</td>
+                        <td>卧龙</td>
+                        <td>2017718</td>
+                        <td>10000</td>
+                    </tr>
+                    <tr>
+                        <td>2017-7-18</td>
+                        <td>卧龙</td>
+                        <td>2017718</td>
+                        <td>10000</td>
+                    </tr>
+
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="4">
+                            <div style="float: left;">
+                                <span>共计 10 条记录，收益合计：100000</span>
+                            </div>
+
+                            <div class="foot_right" style="float: right;">
+                                <span id="page_num_data" style="margin-left: -60px;float: left">第 1 页</span>
+                                <div id="paged_data" class="table_paged"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+            </form>
+        </div>
+        <div id="div_pass" class="change_pass right_pannel">
+            <div class="pass_content">
+                <form id="pass_form" method="post" action="/index.php/Channel/RestFull/changePass/ucid/{$ucid}">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td>当前密码：</td>
+                            <td><input type="password" name="change_cur_pass"></td>
+                        </tr>
+                        <tr>
+                            <td>新密码：</td>
+                            <td><input id="change_new_pass" type="password" name="change_new_pass"></td>
+                        </tr>
+                        <tr>
+                            <td>再次输入：</td>
+                            <td><input id="change_rep_pass" type="password" name="change_rep_pass"></td>
+                        </tr>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td colspan="2"><button id="pass_btn" class="sub_button">提交</button></td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <div id="div_channel" class="right_pannel">
+            <div class="channel_pannel">
+                <div class="add_channel">
+                    <form method="post" action="/index.php/Channel/RestFull/addUser">
+                        <ul>渠道添加&nbsp;&nbsp;>
+                        <li>
+                        <table>
+                            <tr>
+                                <td>渠道名称：</td>
+                                <td><input type="text" name="uname"></td>
+                            </tr>
+                            <tr>
+                                <td>渠道号：</td>
+                                <td><input type="text" name="ucid"></td>
+                            </tr>
+                            <tr>
+                                <td>账号：</td>
+                                <td><input type="text" name="uaccount"></td>
+                            </tr>
+                            <tr>
+                                <td>密码：</td>
+                                <td><input type="text" name="upassword"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"> <input class="sub_button" type="submit" value="添加"></td>
+                            </tr>
+                        </table>
+                        </li>
+                        </ul>
+                    </form>
+                </div>
+            <table id="table_channel" class="common_table">
+                <thead>
+                    <tr>
+                        <td>添加日期</td>
+                        <td>渠道名称</td>
+                        <td>渠道号</td>
+                        <td>账号</td>
+                        <td>密码</td>
+                        <td>操作</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+
+                <tfoot>
+                <tr>
+                    <td colspan="6">
+                        <div style="float: left;">
+                            <span id="page_count">共计 10 条记录</span>
+                        </div>
+
+                        <div class="foot_right" style="float: right;">
+                            <span id="page_num_user" style="margin-left: -60px;float: left">第 1 页</span>
+                            <div id="paged_user" class="table_paged"></div>
+                        </div>
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+            </div>
+        </div>
+        <div id="div_prop" class="channel_prop right_pannel">
+            <div class="channel_pannel">
+                <div class="add_channel" style="padding: 20px 20px;">
+                    <form action="#">
+                        表头名：<input type="text"><br>
+                        字段名：<input type="text"><br>
+                        <input type="submit">
+                    </form>
+                </div>
+                <table class="common_table">
+                    <thead>
+                    <tr>
+                        <td>表头名</td>
+                        <td>字段名</td>
+                        <td>操作</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>收益</td>
+                        <td>cincome</td>
+                        <td><input type="button" value="删除"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
