@@ -91,33 +91,35 @@
             background: rgb(247,247,247);
         }
 
-        .right_container .right_content{
-            float: left;
-            width: 100%;
-            height: 800px;
-            margin-top: 60px;
-            background: white;
-        }
+        /*.right_container .right_content{*/
+            /*float: left;*/
+            /*width: 100%;*/
+            /*height: 800px;*/
+            /*margin-top: 60px;*/
+            /*background: white;*/
+        /*}*/
 
         .right_container .change_pass{
-            float: left;
-            width: 100%;
+            width: 95%;
+            height: 800px;
+            background: white;
+            margin-top: 0px;
+        }
+
+        .right_container .right_pannel{
+            width: 95%;
             height: 800px;
             background: white;
             margin-top: 60px;
-            margin-left: -100%;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .right_container .right_content div{
+        .right_container .right_content .right_pn{
             padding: 15px 50px;
             color: rgb(115, 135, 156);
         }
-        .right_container .right_content .right_pn select{
-            height: 30px;
-            width: 100px;
-        }
-        .right_container .right_content .right_byday div{
-            padding: 0;
+        .right_container .right_content .right_pn .last_date{
             display: inline-block;
         }
 
@@ -173,8 +175,8 @@
 
         .right_content .excel {
             position: absolute;
-            right: 0;
-            top:0;
+            right: 40px;
+            top:-40px;
         }
 
         .right_content .excel .sub_button{
@@ -184,7 +186,8 @@
         .change_pass .pass_content{
             width: 500px;
             height: 300px;
-            margin: 200px auto;
+            margin: 0 auto;
+            padding: 200px 0;
         }
 
         .change_pass .pass_content table{
@@ -230,10 +233,10 @@
             background: gainsboro;
         }
 
-        .right_content .right_table .page_ul .prev{
+        .right_content .right_table .page_ul .first{
             border-radius: 3px 0 0 3px;
         }
-        .right_content .right_table .page_ul .next{
+        .right_content .right_table .page_ul .last{
             border-radius: 0 3px 3px 0;
             border-right: 1px solid lightgray;
         }
@@ -260,17 +263,25 @@
 
     <script src="/Public/js/jquery.js"></script>
     <script src="/Public/js/jqPaginator.min.js"></script>
+    <script src="/Public/layui/layui.js"></script>
+    <link rel="stylesheet" href="/Public/layui/css/layui.css">
     <script>
         $(document).ready(function(){
-            $("#div_pass").hide();
+            hideall();
+
+            $("#div_right_content").show();
+            $("#excel_button").show();
+
             $("#tab_list").click(function () {
-                $("#div_pass").hide();
+                hideall();
+                $("#div_right_content").show();
                 $("#excel_button").show();
-                $(".right_top h2").text("数据列表");
+                $(".right_top h2").text("数据管理");
             });
+
             $("#tab_pass").click(function () {
+                hideall();
                 $("#div_pass").show();
-                $("#excel_button").hide();
                 $(".right_top h2").text("修改密码");
             });
 
@@ -299,7 +310,199 @@
                     return false;
                 }
             });
+
+            var cname = $("#lb_dname").text();
+            //动态填充表头
+            tableHeadInfo = getTableHead();
+            $.ajax({
+                url:'/index.php/Channel/RestFull/getCid',
+                type:'post',
+                data:{cname:cname},
+                success:function(data) {
+                    $("#data_cid_select option").remove();
+                    $("#data_cid_select").append("<option value=\"pn_all\">\n" +
+                        "                        全部\n" +
+                        "                    </option>");
+                    $.each(data,function (index,v) {
+                        $("#data_cid_select").append("<option value=\"\">"+v.cid+"</option>");
+                    });
+                },
+                error : function() {
+                    alert("获取渠道号失败！");
+                }
+            });
+
+            //一般直接写在一个js文件中
+            layui.use(['layer', 'form','laydate'], function(){
+                var layer = layui.layer
+                    ,form = layui.form();
+                var laydate = layui.laydate;
+                var start = {
+                    min: '2017-01-01 23:59:59'
+                    ,max: '2099-06-16 23:59:59'
+                    ,istoday: false
+                    ,choose: function(datas){
+                        end.min = datas; //开始日选好后，重置结束日的最小日期
+                        end.start = datas //将结束日的初始值设定为开始日
+                    }
+                };
+
+                var end = {
+                    min: laydate.now()
+                    ,max: '2099-06-16 23:59:59'
+                    ,istoday: false
+                    ,choose: function(datas){
+                        start.max = datas; //结束日选好后，重置开始日的最大日期
+                    }
+                };
+
+                document.getElementById('LAY_demorange_s').onclick = function(){
+                    start.elem = this;
+                    laydate(start);
+                }
+
+                document.getElementById('LAY_demorange_e').onclick = function(){
+                    end.elem = this
+                    laydate(end);
+                }
+                //监听 添加用户提交
+                form.on('submit(formDemo)', function(data){
+                    var url = '/index.php/Channel/RestFull/addUser';
+                    var value = data.field;
+                    $.ajax({
+                        url:url,
+                        type:'post',
+                        data:{uname:value.uname,ucid:value.ucid,uaccount:value.uaccount,upassword:value.upassword},
+                        success:function(data) {
+                            if(data.msg =="success" ){
+                                layerAlert(true,"添加成功");
+                            }else{
+                                layerAlert(false,"添加失败 "+data.data);
+                            }
+                        },
+                        error : function() {
+                            layerAlert(false,"添加失败 "+data.data);
+                        }
+                    });
+                    return false;
+                });
+
+                //监听 添加data提交
+                form.on('submit(form_submit_data)', function(data){
+                    var url = '/index.php/Channel/RestFull/addData';
+                    var value = data.field;
+                    var dname = $("#lb_dname").text();
+                    var dcid = $("#lb_dcid").text();
+                    $.ajax({
+                        url:url,
+                        type:'post',
+                        data:{dname:dname,dcid:dcid,dincome:value.dincome,ddate:value.ddate},
+                        success:function(data) {
+                            if(data.msg =="success" ){
+                                layerAlert(true,"添加成功");
+                            }else{
+                                layerAlert(false,"添加失败 "+data.data);
+                            }
+                        },
+                        error : function() {
+                            layerAlert(false,"添加失败 "+data.data);
+                        }
+                    });
+                    return false;
+                });
+
+            });
+
+
         });
+        var tableHeadInfo=[];
+
+        function hideall() {
+            $("#div_pass").hide();
+            $("#excel_button").hide();
+            $("#div_right_content").hide();
+        }
+        function queryData(flag,day_count,page) {
+            var dname = $.trim($("#lb_dname").text());
+            var dcid = $.trim($("#data_cid_select").children('option:selected').text());
+            var startTime = $.trim($("#LAY_demorange_s").val());
+            var endTime = $.trim($("#LAY_demorange_e").val());
+            var requests = {"page":page,"days":day_count,
+                "startTime":startTime,
+                "endTime":endTime,
+                "dname":dname,"dcid":dcid};
+            $.getJSON("/index.php/Channel/RestFull/getData",requests,function(data,status){
+                if(data.totalRecord != 0){
+                    $("#data_body tr").remove();
+                    $("#data_table_header td").remove();
+                    $("#page_data_count").text("共"+data.totalRecord+"条数据,");
+                    if(data.msg =="success" ){
+                        //先取一条数据
+                        var dataIndex = data.records[0];
+                        var headerstr="";
+                        //把对应字段的表头名取到
+                        //表头字段长度，用来给foot设置跨列合并用的
+                        var lenth = 0;
+                        $.each(dataIndex,function (index, v) {
+                            headerstr = headerstr+"<td>"+tableHeadInfo[''+index]+"</td>";
+                            lenth++;
+                        });
+                        $("#tfoot_td").attr("colspan",lenth);//+1是因为还有一个操作列
+                        $("#data_table_header").append(headerstr);
+                        //填充数据
+                        $.each(data.records,function(index, v){
+                            var contentstr="<tr>";
+                            $.each(v,function (filed, value) {
+                                contentstr = contentstr+"<td>"+value+"</td>";
+                            });
+                            contentstr =  contentstr+"</tr>";
+                            $("#data_body ").append(contentstr);
+                        });
+                        var countStr ="合计 > ";
+                        //合计字段：countName 合计数值:countSum
+                        $.each(data.countAll,function (index,value) {
+                            countStr += value.countName+":"+parseFloat( value.countSum)+"";
+                        });
+//                    $("#page_data_dincome").text("收益："+parseFloat(data.countAll).toFixed(2));
+                        $("#page_data_dincome").text(countStr);
+                        if(flag==0){
+                            $("#paged_data").jqPaginator({
+                                totalPages: data.totalPage,
+                                visiblePages: 7,
+                                currentPage: 1,
+                                wrapper:'<ul class="page_ul"></ul>',
+                                first: '<li class="first" style="border-radius: 3px 0 0 3px;"><a href="javascript:void(0);">First</a></li>',
+                                prev: '<li class="prev"><a href="javascript:void(0);">Previous</a></li>',
+                                next: '<li class="next"><a href="javascript:void(0);">Next</a></li>',
+                                last: '<li class="last"><a href="javascript:void(0);">Last</a></li>',
+                                page: '<li class="page"><a href="javascript:void(0);">{{page}}</a></li>',
+                                onPageChange: function (num) {
+                                    queryData(1,day_count,num);
+                                    $("#page_num_data").text("第 "+num+" 页");
+                                }
+                            });
+                        }
+                    }else{
+                        layerAlert(false,"获取失败 "+data.data);
+                    }
+                }else{
+                    $("#data_body tr").remove();
+                    $("#page_data_count").text("共计 0 条记录");
+                    $("#page_data_dincome").text("合计:");
+                }
+            });
+        }
+
+        function getTableHead(flag) {
+            var tableHeadInfo = [];
+            $.getJSON("/index.php/Channel/RestFull/getTableHead",{flag:flag},function(data,status){
+                $.each(data,function (index,v) {
+                    tableHeadInfo[''+v.ffield]=v.fname;
+                })
+            });
+            return tableHeadInfo;
+        }
+
     </script>
 </head>
 <body>
@@ -325,90 +528,87 @@
 <div class="content_right">
 <div class="right_top">
     <h2>数据列表</h2>
-    <a style="float: right;line-height: 80px;" href="/index.php/Channel/index/logout"><span>退出登录</span></a>
+    <a style="float: right;line-height: 80px;margin-right: 50px" href="/index.php/Channel/index/logout"><span>退出登录</span></a>
 </div>
     <div class="right_container">
-        <div id="div_right_content" class="right_content">
+        <div id="div_right_content" class="right_content right_pannel">
             <div class="excel">
             <button class="sub_button" id="excel_button" type="button">导出Excel</button>
             </div>
             <form action="#">
                 <div class="right_pn">
-                    <span>渠道名称：卧龙</span>
+                    渠道名称：<span id="lb_dname">{$uname}</span>
+                </div>
+                <div class="right_pn">
+                    <span>渠道项目号：</span>
+                    <select name="channel_pn" id="data_cid_select">
+                        <option value="pn_all">
+                            全部
+                        </option>
+                    </select>
+                </div>
+                <div class="right_pn">
+                    <span>最近查询：</span>
+                    <div class="last_date">
+                        <button onclick="queryData(0,7,0)" class="sub_button" type="button">一周</button>
+                        <button onclick="queryData(0,30,0)" class="sub_button" type="button">一月</button>
+                        <button onclick="queryData(0,90,0)" class="sub_button" type="button">三月</button>
+                    </div>
+                </div>
+                <div class="right_pn" >
+                    <div class="layui-form-pane">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">范围查询</label>
+                            <div class="layui-input-inline" >
+                                <input class="layui-input" placeholder="开始日" id="LAY_demorange_s">
+                            </div>
+                            <div class="layui-input-inline">
+                                <input class="layui-input" placeholder="截止日" id="LAY_demorange_e">
+
+                            </div>
+                            <div class="layui-input-inline">
+                                <button onclick="queryData(0,-1,0)" class="sub_button" type="button">查询</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="right_table right_pn" style="position: relative">
+                    <table class="common_table">
+                        <thead >
+                        <tr id="data_table_header">
+                            <td>日期</td>
+                            <td>渠道名称</td>
+                            <td>渠道号</td>
+                            <td>收益</td>
+                        </tr>
+                        </thead>
+                        <tbody id="data_body">
+
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td id="tfoot_td" colspan="4">
+                                <div style="float: left;">
+                                    <span id="page_data_count">共计 0 条记录</span>
+                                    <span id="page_data_dincome">收益:</span>
+                                </div>
+                                <div class="foot_right" style="float: right;">
+                                    <span id="page_num_data" style="margin-left: -60px;float: left">第 1 页</span>
+                                    <div id="paged_data" class="table_paged"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        </tfoot>
+                    </table>
 
                 </div>
-            <div class="right_byday">
-                <span>最近查询：</span>
-                <div>
-                    <button class="sub_button" type="button">一周</button>
-                    <button class="sub_button" type="button">一月</button>
-                    <button class="sub_button" type="button">三月</button>
-                </div>
-            </div>
-            <div class="right_between">
-                <span>区间查询：</span>
-                <input type="date"><span>&nbsp;至&nbsp;</span>
-                <input type="date">
-                <input class="sub_button" type="submit" value="查询">
-            </div>
-            <div class="right_table">
-                <table>
-                    <thead>
-                    <tr>
-                        <td>日期</td>
-                        <td>渠道名称</td>
-                        <td>渠道项目号</td>
-                        <td>收益</td>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>2017-7-18</td>
-                        <td>卧龙</td>
-                        <td>2017718</td>
-                        <td>10000</td>
-                    </tr>
-                    <tr>
-                        <td>2017-7-18</td>
-                        <td>卧龙</td>
-                        <td>2017718</td>
-                        <td>10000</td>
-                    </tr>
-                    <tr>
-                        <td>2017-7-18</td>
-                        <td>卧龙</td>
-                        <td>2017718</td>
-                        <td>10000</td>
-                    </tr>
-                    <tr>
-                        <td>2017-7-18</td>
-                        <td>卧龙</td>
-                        <td>2017718</td>
-                        <td>10000</td>
-                    </tr>
-
-                    </tbody>
-                    <tfoot>
-                    <tr>
-                        <td colspan="4">
-                            <div style="float: left;">
-                                <span>共计 10 条记录，收益合计：100000</span>
-                            </div>
-
-                            <div class="foot_right" style="float: right;">
-                                <span id="page_num" style="margin-left: -60px;float: left">第 1 页</span>
-                                <div  id="pagetest" class="table_paged"></div>
-                            </div>
-                        </td>
-                    </tr>
-                    </tfoot>
-                </table>
-            </div>
             </form>
         </div>
-        <div id="div_pass" class="change_pass">
+        <div id="div_pass" class="change_pass right_pannel">
             <div class="pass_content">
-                <form id="pass_form" method="post" action="/index.php/Channel/RestFull/changePass/ucid/{$ucid}">
+                <form id="pass_form" method="post" action="/index.php/Channel/RestFull/changePass/uaccount/{$uaccount}">
                     <table>
                         <tbody>
                         <tr>
@@ -434,6 +634,8 @@
             </div>
         </div>
     </div>
+
+</div>
 </div>
 </body>
 </html>

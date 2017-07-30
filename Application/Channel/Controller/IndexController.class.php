@@ -8,12 +8,11 @@ class IndexController extends Controller {
 		if(session('adminUser')){
 		    $ret = session('adminUser');
 		    $this->assign('uaccount',$ret['uaccount']);
-            $this->assign('ucid',$ret['ucid']);
             $this->display("Index/channel_admin");
 		}else if(session('channelUser')){
 		    $ret = session('channelUser');
+		    $this->assign('uname',$ret['uname']);
             $this->assign('uaccount',$ret['uaccount']);
-            $this->assign('ucid',$ret['ucid']);
 		    $this->display("Index/channel_index");
 
 		}else{
@@ -25,7 +24,7 @@ class IndexController extends Controller {
 	public function login(){
 	   $uaccount = $_POST['account'];
        $password = $_POST['password'];
-		$Dao = M("channel_user");	
+	   $Dao = M("channel_user");
        if(!trim($uaccount)){
 
          redirect('Index/index',2,'账号不能为空,正在返回。。。');
@@ -44,15 +43,12 @@ class IndexController extends Controller {
 	  if(trim($password) == $ret['upassword']){
 		  if(trim($uaccount) == "wolongroot"){
 		   $this->assign('uaccount',$uaccount);
-		   $this->assign('ucid',$ret['ucid']);
-		   $this->display("Index/channel_admin");
-		    session('adminUser',$ret);
+		   session('adminUser',$ret);
+		   redirect('Index/index');
 		  }else{
-		  $this->assign('uaccount',$ret['uaccount']);
-		  $this->assign('uaccount',$uaccount);
-          $this->assign('ucid',$ret['ucid']);
-		   $this->display("Index/channel_index");
+		   $this->assign('uaccount',$ret['uaccount']);
 		   session('channelUser',$ret);
+		   redirect('Index/index');
 		  }
 	  }else{
 
