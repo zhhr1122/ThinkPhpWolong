@@ -14,7 +14,6 @@ class IndexController extends Controller {
 		    $this->assign('uname',$ret['uname']);
             $this->assign('uaccount',$ret['uaccount']);
 		    $this->display("Index/channel_index");
-
 		}else{
 		 return $this->display();
 		}
@@ -25,35 +24,23 @@ class IndexController extends Controller {
 	   $uaccount = $_POST['account'];
        $password = $_POST['password'];
 	   $Dao = M("channel_user");
-       if(!trim($uaccount)){
 
-         redirect('Index/index',2,'账号不能为空,正在返回。。。');
-		 return;
-       }
-       if(!trim($password)){
-
-		redirect('Index/index',2,'密码不能为空,正在返回。。。');
-		 return;
-       }
 	  $ret = $Dao->where('uaccount="'.$uaccount.'"')->find();
 	  if(!$ret){
-		redirect('Index/index',2,'账号不存在,正在返回。。。');
-		return;
+		 $this->ajaxReturn(array("msg"=>"error","data"=>"账号不存在"),'JSON');
 	  }
 	  if(trim($password) == $ret['upassword']){
 		  if(trim($uaccount) == "wolongroot"){
 		   $this->assign('uaccount',$uaccount);
 		   session('adminUser',$ret);
-		   redirect('Index/index');
+
 		  }else{
 		   $this->assign('uaccount',$ret['uaccount']);
 		   session('channelUser',$ret);
-		   redirect('Index/index');
 		  }
+		  $this->ajaxReturn(array("msg"=>"success"),'JSON');
 	  }else{
-
-		  redirect('Index/index',2,'密码不正确,正在返回。。。');
-		  return;
+          $this->ajaxReturn(array("msg"=>"error","data"=>"密码错误"),'JSON');
 	  }
 	}
 

@@ -99,23 +99,24 @@ class RestFullController extends Controller {
 
     }
 
-    public function changePass($uaccount){
-         $oldPassword = $_POST['change_cur_pass'];
-         $newPassword =  $_POST['change_new_pass'];
+    public function changePass(){
+         $datas =  $_POST['datas'];
+         $uaccount =  $datas['uaccount'];
+         $oldPassword = $datas['change_cur_pass'];
+         $newPassword =  $datas['change_new_pass'];
 
          if(!is_null($uaccount)){
             $User = M("channel_user");
             $con['uaccount'] = $uaccount;
             $ret = $User->where($con)->find();
-            if($ret['upassword'] != trim($_POST['change_cur_pass'])){
-                 redirect('/index.php/Channel/Index/index',3,'当前密码错误,正在返回。。。');
-                 return;
+            if($ret['upassword'] != trim($oldPassword)){
+                  $this->ajaxReturn(array("msg"=>"error","data"=>"当前密码错误"),'JSON');
             }
             $data['upassword'] = trim($newPassword);
             $User->where(array("uaccount"=>$uaccount))->save($data);
-            redirect('/index.php/Channel/Index/index',2,'修改密码成功,正在返回。。。');
+            $this->ajaxReturn(array("msg"=>"success"),'JSON');
          }else{
-            redirect('/index.php/Channel/Index/index',3,'没有cid,正在返回。。。');
+            $this->ajaxReturn(array("msg"=>"error","data"=>"没有此用户"),'JSON');
          }
     }
 

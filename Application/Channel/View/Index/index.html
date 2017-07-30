@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>卧龙渠道</title>
+    <script src="/Public/js/jquery.js"></script>
+    <script src="/Public/layui/layui.js"></script>
+    <link rel="stylesheet" href="/Public/layui/css/layui.css">
     <style>
         *{
             margin: 0;
@@ -25,6 +28,7 @@
         }
 
         .container h2{
+            font-size: 26px;
             color: #2A3F54;
             margin-bottom: 30px;
         }
@@ -53,7 +57,7 @@
             border: 1px solid #DADADA;
         }
 
-        .container input[type=submit]{
+        .container button{
             width: 375px;
             height: 40px;
             color: #fff;
@@ -65,10 +69,45 @@
             cursor: pointer;
             outline:0;
         }
-        .container input[type=submit]:hover{
+        .container button:hover{
             background-color: rgb(115, 135, 156);
         }
     </style>
+    <script>
+        function login() {
+            var account = $("#account").val();
+            var password = $("#password").val();
+            var url = '/index.php/Channel/Index/login';
+            $.ajax({
+                url:url,
+                type:'post',
+                data:{account:account,password:password},
+                success:function(data) {
+                    if(data.msg =="success" ){
+                        location.href = '/index.php/Channel/index';
+                    }else{
+                        layerAlert(false,"登录失败 "+data.data);
+                    }
+                },
+                error : function(data) {
+                    layerAlert(false,"登录失败 "+data.data);
+                }
+            });
+            return false;
+        }
+        function layerAlert(needReload,msg) {
+            layer.alert(msg, {
+                closeBtn: 0,
+                shadeClose:true,
+                yes: function(index, layero){
+                    if(needReload){
+                        window.location.reload();
+                    }
+                    layer.close(index); //如果设定了yes回调，需进行手工关闭
+                }
+            });
+        }
+    </script>
 </head>
 <body>
 <div class="container">
@@ -78,17 +117,23 @@
             <tbody>
             <tr>
                 <td class="title"><span>账号:</span></td>
-                <td><input type="text" name="account"></td>
+                <td><input id="account" type="text" name="account"></td>
             </tr>
             <tr>
                 <td class="title"><span>密码:</span></td>
-                <td><input type="password" name="password"></td>
+                <td><input id="password" type="password" name="password"></td>
             </tr>
             </tbody>
         </table>
-        <input type="submit" value="登录">
+        <button type="button" onclick="login()">登录</button>
 
     </form>
 </div>
+
+<script>
+    layui.use(['layer'], function(){
+        var layer = layui.layer;
+    });
+</script>
 </body>
 </html>

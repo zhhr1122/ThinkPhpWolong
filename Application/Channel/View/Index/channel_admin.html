@@ -324,19 +324,6 @@
                 $("#div_prop").show();
                 $(".right_top h2").text("字段管理");
             });
-
-
-
-
-            $("#pass_btn").click(function () {
-                if($("#change_new_pass").val() == $("#change_rep_pass").val()){
-                    $("#pass_form").submit();
-                    return true;
-                }else{
-                    alert("两次输入的密码不一致!");
-                    return false;
-                }
-            });
             $("#add_user").click(function () {
                 layer.open({
                     title:"新增渠道用户",
@@ -386,7 +373,7 @@
                     '                    <tr><td><span>渠道用户：</span></td><td><select required name="" id="channel_select">\n' +
                     '                        </select></td></tr>\n' +
                     '                    <tr><td><span>新增渠道号：</span></td><td><input required type="text"></td></tr>\n' +
-                    '                    <tr><td style="text-align: center" colspan="2"><button id="bt_add_channel" class="sub_button">添加</button></td></tr>\n' +
+                    '                    <tr><td style="text-align: center;" colspan="2"><button  style="background-color: forestgreen" id="bt_add_channel" class="sub_button">添加</button></td></tr>\n' +
                     '                </table>'
                 });
 
@@ -486,7 +473,7 @@
                         '</div>'+
                         '        <div class="layui-form-item">\n' +
                         '            <div style="margin-top: 20px;" class="layui-input-block">\n' +
-                        '                <button class="layui-btn" lay-submit lay-filter="form_submit_data">立即提交</button>\n' +
+                        '                <button style="background-color: forestgreen" class="layui-btn" lay-submit lay-filter="form_submit_data">立即提交</button>\n' +
                         '                <button type="reset" class="layui-btn layui-btn-primary">重置</button>\n' +
                         '            </div>\n' +
                         '        </div>\n' +
@@ -636,9 +623,6 @@
                 form.on('submit(form_update_data)',function (data) {
                     var url = '/index.php/Channel/RestFull/updateData';
                     var values = data.field;
-                    values['dname'] = $("#lb_update_dname").text();
-                    values['dcid'] = $("#lb_update_dcid").text();
-                    values['ddate'] = $("#lb_update_ddate").text();
                     $.ajax({
                         url:url,
                         type:'post',
@@ -654,6 +638,33 @@
                             layerAlert(false,"修改失败 "+data.data);
                         }
                     });
+                    return false;
+                });
+
+                form.on('submit(form_update_password)',function (data) {
+                    var uaccount = $("#user_name").text();
+                    var url = '/index.php/Channel/RestFull/changePass';
+                    var values = data.field;
+                    values['uaccount'] = uaccount;
+                    if(values.change_new_pass == values.change_rep_pass){
+                        $.ajax({
+                            url:url,
+                            type:'post',
+                            data:{datas:values},
+                            success:function(data) {
+                                if(data.msg =="success" ){
+                                    layerAlert(true,"修改成功");
+                                }else{
+                                    layerAlert(false,"修改失败 "+data.data);
+                                }
+                            },
+                            error : function() {
+                                layerAlert(false,"修改失败 "+data.data);
+                            }
+                        });
+                    }else{
+                        layerAlert(false,"两次输入的密码不一致!");
+                    }
                     return false;
                 });
             });
@@ -682,7 +693,6 @@
                 $("#"+dom_select_id).trigger("change");
             });
         }
-
         function hideall() {
             $("#div_pass").hide();
             $("#excel_button").hide();
@@ -690,7 +700,6 @@
             $("#div_prop").hide();
             $("#div_right_content").hide();
         }
-
         function deleteUser(ucid) {
             layer.confirm('你确认要删除渠道号：'+ucid+'？', {
                 btn: ['删除','取消'] //按钮
@@ -856,7 +865,6 @@
                 }
             });
         }
-
         function queryData(flag,day_count,page) {
             var dname = $.trim($("#data_select").children('option:selected').text());
             var dcid = $.trim($("#data_cid_select").children('option:selected').text());
@@ -931,7 +939,6 @@
                 }
             });
         }
-
         function getTableHead(flag) {
             var tableHeadInfo = [];
             $.getJSON("/index.php/Channel/RestFull/getTableHead",{flag:flag},function(data,status){
@@ -942,7 +949,6 @@
 
             return tableHeadInfo;
         }
-
         function setFieldTable(){
             $("#body_add_field tr").remove();
             $.getJSON("/index.php/Channel/RestFull/getTableHead",{flag:"1"},function(data,status){
@@ -956,7 +962,6 @@
                 })
             });
         }
-    
         function outputExcel() {
             if(!dataRequests.dcid){
                 alert("请先查询数据!");
@@ -1085,27 +1090,34 @@
         </div>
         <div id="div_pass" class="change_pass right_pannel">
             <div class="pass_content">
-                <form id="pass_form" method="post" action="/index.php/Channel/RestFull/changePass/uaccount/{$uaccount}">
+                <form id="pass_form" class="layui-form layui-form-pane" method="post" action="">
                     <table>
                         <tbody>
-                        <tr>
-                            <td>当前密码：</td>
-                            <td><input type="password" name="change_cur_pass"></td>
-                        </tr>
-                        <tr>
-                            <td>新密码：</td>
-                            <td><input id="change_new_pass" type="password" name="change_new_pass"></td>
-                        </tr>
-                        <tr>
-                            <td>再次输入：</td>
-                            <td><input id="change_rep_pass" type="password" name="change_rep_pass"></td>
-                        </tr>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">当前密码</label>
+                            <div class="layui-input-inline">
+                                <input type="password" name="change_cur_pass" required lay-verify="required" placeholder="当前密码" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">新密码</label>
+                            <div class="layui-input-inline">
+                                <input type="password" name="change_new_pass" required lay-verify="required" placeholder="新密码" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">再次输入</label>
+                            <div class="layui-input-inline">
+                                <input type="password" name="change_rep_pass" required lay-verify="required" placeholder="再次输入" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div style="margin-top: 20px;" class="layui-input-block">
+                                <button  style="background-color: forestgreen" class="layui-btn" lay-submit lay-filter="form_update_password">立即修改</button>
+                                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                            </div>
+                        </div>
                         </tbody>
-                        <tfoot>
-                        <tr>
-                            <td colspan="2"><button id="pass_btn" class="sub_button">提交</button></td>
-                        </tr>
-                        </tfoot>
                     </table>
                 </form>
             </div>

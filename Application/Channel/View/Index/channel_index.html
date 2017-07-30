@@ -301,16 +301,6 @@
                     }
                 });
 
-            $("#pass_btn").click(function () {
-                if($("#change_new_pass").val() == $("#change_rep_pass").val()){
-                    $("#pass_form").submit();
-                    return true;
-                }else{
-                    alert("两次输入的密码不一致!");
-                    return false;
-                }
-            });
-
             var cname = $("#lb_dname").text();
             //动态填充表头
             tableHeadInfo = getTableHead();
@@ -411,6 +401,33 @@
                     return false;
                 });
 
+                //修改密码
+                form.on('submit(form_update_password)',function (data) {
+                    var uaccount = $("#user_name").text();
+                    var url = '/index.php/Channel/RestFull/changePass';
+                    var values = data.field;
+                    values['uaccount'] = uaccount;
+                    if(values.change_new_pass == values.change_rep_pass){
+                        $.ajax({
+                            url:url,
+                            type:'post',
+                            data:{datas:values},
+                            success:function(data) {
+                                if(data.msg =="success" ){
+                                    layerAlert(true,"修改成功");
+                                }else{
+                                    layerAlert(false,"修改失败 "+data.data);
+                                }
+                            },
+                            error : function() {
+                                layerAlert(false,"修改失败 "+data.data);
+                            }
+                        });
+                    }else{
+                        layerAlert(false,"两次输入的密码不一致!");
+                    }
+                    return false;
+                });
             });
 
 
@@ -494,7 +511,18 @@
                 }
             });
         }
-
+        function layerAlert(needReload,msg) {
+            layer.alert(msg, {
+                closeBtn: 0,
+                shadeClose:true,
+                yes: function(index, layero){
+                    if(needReload){
+                        window.location.reload();
+                    }
+                    layer.close(index); //如果设定了yes回调，需进行手工关闭
+                }
+            });
+        }
         function getTableHead(flag) {
             var tableHeadInfo = [];
             $.getJSON("/index.php/Channel/RestFull/getTableHead",{flag:flag},function(data,status){
@@ -620,27 +648,34 @@
         </div>
         <div id="div_pass" class="change_pass right_pannel">
             <div class="pass_content">
-                <form id="pass_form" method="post" action="/index.php/Channel/RestFull/changePass/uaccount/{$uaccount}">
+                <form id="pass_form" class="layui-form layui-form-pane" method="post" action="">
                     <table>
                         <tbody>
-                        <tr>
-                            <td>当前密码：</td>
-                            <td><input type="password" name="change_cur_pass"></td>
-                        </tr>
-                        <tr>
-                            <td>新密码：</td>
-                            <td><input id="change_new_pass" type="password" name="change_new_pass"></td>
-                        </tr>
-                        <tr>
-                            <td>再次输入：</td>
-                            <td><input id="change_rep_pass" type="password" name="change_rep_pass"></td>
-                        </tr>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">当前密码</label>
+                            <div class="layui-input-inline">
+                                <input type="password" name="change_cur_pass" required lay-verify="required" placeholder="当前密码" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">新密码</label>
+                            <div class="layui-input-inline">
+                                <input type="password" name="change_new_pass" required lay-verify="required" placeholder="新密码" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">再次输入</label>
+                            <div class="layui-input-inline">
+                                <input type="password" name="change_rep_pass" required lay-verify="required" placeholder="再次输入" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div style="margin-top: 20px;" class="layui-input-block">
+                                <button  style="background-color: forestgreen" class="layui-btn" lay-submit lay-filter="form_update_password">立即修改</button>
+                                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                            </div>
+                        </div>
                         </tbody>
-                        <tfoot>
-                        <tr>
-                            <td colspan="2"><button id="pass_btn" class="sub_button">提交</button></td>
-                        </tr>
-                        </tfoot>
                     </table>
                 </form>
             </div>
