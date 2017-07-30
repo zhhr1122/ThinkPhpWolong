@@ -644,6 +644,8 @@
 
         //表头数据
         var tableHeadInfo = [];
+        //当前查询数据的条件，用来导出excle
+        var dataRequests = {};
 
         function getAllUserName(dom_select_id){
 
@@ -794,6 +796,7 @@
                 "startTime":startTime,
                 "endTime":endTime,
                 "dname":dname,"dcid":dcid};
+            dataRequests = requests;
             $.getJSON("/index.php/Channel/RestFull/getData",requests,function(data,status){
                 if(data.totalRecord != 0){
                 $("#data_body tr").remove();
@@ -882,7 +885,17 @@
                 })
             });
         }
+    
+        function outputExcel() {
+            if(!dataRequests.dcid){
+                alert("请先查询数据!");
+            }else{
+                location.href = '/index.php/Channel/RestFull/outputExcel?'+'dcid='+dataRequests['dcid']+
+                '&dname='+dataRequests['dname']+'&days='+dataRequests['days']+'&startTime='+dataRequests['startTime']+
+                 '&endTime='+dataRequests['endTime']+'&page='+dataRequests['page'];
+            }
 
+        }
     </script>
 </head>
 <body>
@@ -920,7 +933,7 @@
     <div class="right_container">
         <div id="div_right_content" class="right_content right_pannel">
             <div class="excel">
-            <button class="sub_button" id="excel_button" type="button">导出Excel</button>
+            <button onclick="outputExcel()" class="sub_button" id="excel_button" type="button">导出Excel</button>
             </div>
             <form action="#">
                 <div class="right_pn">

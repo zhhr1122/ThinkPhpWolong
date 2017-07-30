@@ -170,7 +170,6 @@ class RestFullController extends Controller {
     public function getData(){
         $User = M("channel_data");
 
-
         $startTime = $_GET['startTime'];
         $endTime = $_GET['endTime'];
 
@@ -331,4 +330,161 @@ class RestFullController extends Controller {
        }
     }
 
+    //导出excel数据
+    public function outputExcel() {
+
+        //生成Excel的表头的索引
+        $headIndex = array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
+        vendor('PHPExcel');
+        $User = M("channel_data");
+        $ret = null;
+        $startTime = $_GET['startTime'];
+        $endTime = $_GET['endTime'];
+
+        if(!$startTime){
+            $startTime=date('Y-m-d');
+        }
+        if(!$endTime){
+            $endTime=date('Y-m-d');
+        }
+
+        $dname = $_GET['dname'];
+        $dcid = $_GET['dcid'];
+        //查询的天数
+        $days = $_GET['days'];
+
+        //一页显示10条数据
+        $step=10;
+        //请求的页码
+        $page = $_GET['page'];
+        if(is_null($page) || $page == 0){
+          $page = 1;
+        }
+
+        $map['dname']  = $dname;
+        //如果是最近时间查询
+        if($days != -1){
+            $time=time()-$days*24*3600;
+            $startDay=date('Y-m-d',$time);
+            $map['ddate']  = array('egt',$startDay);
+
+        }else{//如果是区间查询
+            $map['ddate']  = array(array('egt',$startTime),array('elt',$endTime));
+        }
+
+        if($dcid == "全部"){
+            $ret = $User->where($map)->order('ddate desc')->select();
+         }else{
+            $map['dcid'] = $dcid;
+            $ret = $User->where($map)->order('ddate desc')->select();
+         }
+
+
+        $Dao = M("channel_field");
+
+        //所有字段，生成Excel的表头数据
+        $headNames = $Dao->select();
+        $mapField['ffield']  = array('not in',array('dname','dcid','ddate'));
+        $fields = $Dao->where($mapField)->select();
+        $countAll =array();
+
+        //获取需要统计字段的合计数值，返回一个map例如， 字段：1000
+        foreach ($fields as $field){
+              $temp['countName']=$field['fname'];
+              $sum = 0;
+              foreach ($ret as $value){
+                 $sum += $value[''.$field['ffield']];
+              }
+              $temp['countSum']=$sum;
+              array_push($countAll,$temp);
+        }
+
+//        $this->ajaxReturn(array("totalPage"=>$totalPage,"totalRecord"=>$totalRecord,"countAll"=>$countAll,
+//                "msg"=>"success","records"=>$dcid),'JSON');
+
+        // Create new PHPExcel object
+        $objPHPExcel = new \PHPExcel();
+        // Set properties
+        $objPHPExcel->getProperties()->setCreator("ctos")
+                ->setLastModifiedBy("ctos")
+                ->setTitle("Office 2007 XLSX Test Document")
+                ->setSubject("Office 2007 XLSX Test Document")
+                ->setDescription("Test document for Office 2007 XLSX, generated using PHP classes.")
+                ->setKeywords("office 2007 openxml php")
+                ->setCategory("Test result file");
+
+        // set width
+
+        $endIndex = 'A';
+        for($i = 0;$i<count($headNames);$i++){
+            $objPHPExcel->getActiveSheet()->getColumnDimension($headIndex[$i])->setWidth(20);
+            $objPHPExcel->getActiveSheet()->getStyle($headIndex[$i])->getAlignment()->setHorizontal(\PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+            $endIndex = $headIndex[$i];
+        }
+
+
+        // 设置行高度
+        $objPHPExcel->getActiveSheet()->getRowDimension('1')->setRowHeight(25);
+        $objPHPExcel->getActiveSheet()->getRowDimension('2')->setRowHeight(22);
+
+        // 字体和样式
+        $objPHPExcel->getActiveSheet()->getDefaultStyle()->getFont()->setSize(10);
+        $objPHPExcel->getActiveSheet()->getStyle('A2:'.$endIndex.'2')->getFont()->setBold(true);
+        $objPHPExcel->getActiveSheet()->getStyle('A'.(count($ret)+3))->getFont()->setBold(true);
+        $objPHPExcel->getActiveSheet()->getStyle('A1')->getFont()->setBold(true);
+        $objPHPExcel->getActiveSheet()->getStyle('A2')->getFont()->setBold(true);
+
+        $objPHPExcel->getActiveSheet()->getStyle('A2:'.$endIndex.'2')->getAlignment()->setHorizontal(\PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+        $objPHPExcel->getActiveSheet()->getStyle('A2:'.$endIndex.'2')->getBorders()->getAllBorders()->setBorderStyle(\PHPExcel_Style_Border::BORDER_THIN);
+
+        // 设置水平居中
+        $objPHPExcel->getActiveSheet()->getStyle('A1')->getAlignment()->setHorizontal(\PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+        $objPHPExcel->getActiveSheet()->getStyle('A'.(count($ret)+3))->getAlignment()->setHorizontal(\PHPExcel_Style_Alignment::HORIZONTAL_LEFT);
+//        $objPHPExcel->getActiveSheet()->getStyle('A')->getAlignment()->setHorizontal(\PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+//        $objPHPExcel->getActiveSheet()->getStyle('B')->getAlignment()->setHorizontal(\PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+//        $objPHPExcel->getActiveSheet()->getStyle('C')->getAlignment()->setHorizontal(\PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+//        $objPHPExcel->getActiveSheet()->getStyle('D')->getAlignment()->setHorizontal(\PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+//        $objPHPExcel->getActiveSheet()->getStyle('E')->getAlignment()->setHorizontal(\PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+
+        //  合并
+        $objPHPExcel->getActiveSheet()->mergeCells('A1:'.$endIndex.'1');
+        $objPHPExcel->getActiveSheet()->mergeCells('A'.(count($ret)+3).':'.$endIndex.(count($ret)+3));
+
+
+        //合计数据
+        $countAllStr = '合计：统计天数：'.count($ret).', ';
+        for($i = 0;$i<count($countAll);$i++){
+            $countAllStr = $countAllStr.$countAll[$i]['countName'].'：'.$countAll[$i]['countSum'].',  ';
+        }
+
+        $objPHPExcel->setActiveSheetIndex(0)->setCellValue('A'.(count($ret)+3),$countAllStr );
+
+        // 表头
+        $objPHPExcel->setActiveSheetIndex(0)
+                    ->setCellValue('A1', $dname.$dcid.'渠道数据表');
+        for($i = 0;$i<count($headNames);$i++){
+            $objPHPExcel->setActiveSheetIndex(0)->setCellValue($headIndex[$i].'2', $headNames[$i]['fname']);
+        }
+
+        // 内容
+        for ($i = 0, $len = count($ret); $i < $len; $i++) {
+        for($j = 0;$j<count($headNames);$j++){
+            $objPHPExcel->getActiveSheet(0)->setCellValue($headIndex[$j] . ($i + 3), $ret[$i][$headNames[$j]['ffield']]);
+        }
+        }
+
+        // Rename sheet
+        $objPHPExcel->getActiveSheet()->setTitle($dcid.'渠道数据');
+
+        // Set active sheet index to the first sheet, so Excel opens this as the first sheet
+        $objPHPExcel->setActiveSheetIndex(0);
+
+        // 输出
+        header('Content-Type: application/vnd.ms-excel');
+        header('Content-Disposition: attachment;filename="' . $dname.'-channel-'.$dcid . '.xls"');
+        header('Cache-Control: max-age=0');
+
+        $objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
+        $objWriter->save('php://output');
+    }
 }
