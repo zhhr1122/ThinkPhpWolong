@@ -631,7 +631,31 @@
                         }
                     });
                     return false;
-                })
+                });
+                
+                form.on('submit(form_update_data)',function (data) {
+                    var url = '/index.php/Channel/RestFull/updateData';
+                    var values = data.field;
+                    values['dname'] = $("#lb_update_dname").text();
+                    values['dcid'] = $("#lb_update_dcid").text();
+                    values['ddate'] = $("#lb_update_ddate").text();
+                    $.ajax({
+                        url:url,
+                        type:'post',
+                        data:{datas:values},
+                        success:function(data) {
+                            if(data.msg =="success" ){
+                                layerAlert(true,"修改成功");
+                            }else{
+                                layerAlert(false,"修改失败 "+data.data);
+                            }
+                        },
+                        error : function() {
+                            layerAlert(false,"修改失败 "+data.data);
+                        }
+                    });
+                    return false;
+                });
             });
 
         });
@@ -774,6 +798,52 @@
             }, function(){
             });
         }
+        function updateChannelData(value) {
+            var dataField="";
+            $.getJSON("/index.php/Channel/RestFull/getTableHead",{flag:1},function(data,status){
+            $.each(data,function (index,v) {
+                dataField = dataField +'<div class="layui-form-item">\n' +
+                    '            <label class="layui-form-label">'+v.fname+'</label>\n' +
+                    '            <div class="layui-input-inline">\n' +
+                    '                <input type="text" name="'+v.ffield+'" required lay-verify="required" placeholder="'+v.fname+'" autocomplete="off" class="layui-input">\n' +
+                    '            </div>\n' +
+                    '        </div>\n';
+            });
+            layer.open({
+                title:"修改数据",
+                type: 1,
+                area: ['550px', '560px'],
+                shadeClose: true, //点击遮罩关闭
+                content: '<form  style="padding-left: 130px;margin-top: 30px" id="add_data_form" class="layui-form layui-form-pane" action="">\n' +
+                '        <div class="layui-form-item">\n' +
+                '            <label class="layui-form-label">渠道名称</label>\n' +
+                '            <div class="layui-input-inline">\n' +
+                '            <label id="lb_update_dname" class="layui-form-label" style="width: 100%">'+value.dname+'</label>\n' +
+                '            </div>\n' +
+                '        </div>\n' +
+                '        <div class="layui-form-item">\n' +
+                '            <label class="layui-form-label">渠道号</label>\n' +
+                '            <div class="layui-input-inline">\n' +
+                '            <label id="lb_update_dcid" class="layui-form-label" style="width: 100%">'+value.dcid+'</label>\n' +
+                '            </div>\n' +
+                '        </div>\n' +
+                dataField+
+                '        <div class="layui-form-item">\n' +
+                '            <label class="layui-form-label">日期</label>\n' +
+                '            <div class="layui-input-inline">\n' +
+                '            <label id="lb_update_ddate" class="layui-form-label" style="width: 100%">'+value.ddate+'</label>\n' +
+                '            </div>\n' +
+                '        </div>\n' +
+                '        <div class="layui-form-item">\n' +
+                '            <div style="margin-top: 20px;" class="layui-input-block">\n' +
+                '                <button class="layui-btn" lay-submit lay-filter="form_update_data">立即修改</button>\n' +
+                '                <button type="reset" class="layui-btn layui-btn-primary">重置</button>\n' +
+                '            </div>\n' +
+                '        </div>\n' +
+                '    </form>'
+            });
+            });
+        }
         function layerAlert(needReload,msg) {
             layer.alert(msg, {
                 closeBtn: 0,
@@ -823,7 +893,8 @@
                         $.each(v,function (filed, value) {
                             contentstr = contentstr+"<td>"+value+"</td>";
                         });
-                        contentstr =  contentstr+"<td><button onclick=deleteChannelData("+v.dcid+",\'"+v.ddate+"\') type='button'>删除</button></td></tr>";
+                        contentstr =  contentstr+"<td><button onclick=deleteChannelData("+v.dcid+",\'"+v.ddate+"\') type='button'>删除</button>" +
+                            "<button style='margin-left: 20px;' onclick=updateChannelData("+JSON.stringify(v)+") type='button'>修改</button></td></tr>";
                         $("#testta tbody ").append(contentstr);
                     });
                     var countStr ="合计 > ";

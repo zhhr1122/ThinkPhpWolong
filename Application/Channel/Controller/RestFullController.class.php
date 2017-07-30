@@ -29,7 +29,7 @@ class RestFullController extends Controller {
         }
         if($page <= $totalPage){
 
-        $ret = $Dao->join('cms_channel_cid ON cms_channel_user.uname = cms_channel_cid.cname')->page($page,$step)->select();
+        $ret = $Dao->join('cms_channel_cid ON cms_channel_user.uname = cms_channel_cid.cname')->order('uname desc')->page($page,$step)->select();
         }
 
         $data["totalRecord"]=$totalRecord;
@@ -165,6 +165,18 @@ class RestFullController extends Controller {
         $this->ajaxReturn(array("msg"=>"success"),'JSON');
     }
 
+    public function updateData(){
+        $datas = $_POST['datas'];
+
+        $User = M("channel_data");
+        $ret = $User->where(array("dcid"=>$datas['dcid'],"ddate"=>$datas['ddate']))->save($datas);
+        if($ret){
+            $this->ajaxReturn(array("msg"=>"success"),'JSON');
+        }else{
+             $this->ajaxReturn(array("msg"=>"error","data"=>"无法更新"),'JSON');
+        }
+
+    }
     //获取数据
 
     public function getData(){
