@@ -334,7 +334,7 @@ class RestFullController extends Controller {
            $this->ajaxReturn(array("msg"=>"error","data"=>"没有该字段"),'JSON');
        }else{
            $Model = new Model(); // 实例化一个model对象 执行sql语句
-                  $sql = "ALTER TABLE `cms_channel_data` DROP `".$ffield."`";
+                  $sql = "ALTER TABLE cms_channel_data DROP ".$ffield."";
                   if(!$Model->execute($sql)){
                       $this->ajaxReturn(array("msg"=>"error","data"=>"删除字段失败"),'JSON');
                   }

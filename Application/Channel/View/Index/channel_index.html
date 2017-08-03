@@ -307,6 +307,7 @@
 
             var cname = $("#lb_dname").text();
             //动态填充表头
+            tableHeadInfo = null;
             tableHeadInfo = getTableHead();
             $.ajax({
                 url:'/index.php/Channel/RestFull/getCid',
